@@ -800,8 +800,16 @@ const activeLeaderSessions = new Map<string, { teacherId: string; department: st
 
 // Middleware to enforce admin authorization on sensitive write/edit operations
 const requireAdmin = (req: express.Request, res: express.Response, next: express.NextFunction) => {
-  // Always permit admin actions by default, removing admin login restriction
-  (req as any).user = { type: "admin" };
+  const authHeader = req.headers.authorization;
+  if (!authHeader) {
+    res.status(401).json({ error: "Yêu cầu quyền quản trị (Thiếu token)" });
+    return;
+  }
+  const token = authHeader.replace("Bearer ", "").trim();
+  if (!activeSessions.has(token)) {
+    res.status(403).json({ error: "Phiên đăng nhập quản trị hết hạn hoặc không hợp lệ" });
+    return;
+  }
   next();
 };
 
@@ -809,8 +817,8 @@ const requireAdmin = (req: express.Request, res: express.Response, next: express
 const requireAdminOrGroupLeader = (req: express.Request, res: express.Response, next: express.NextFunction) => {
   const authHeader = req.headers.authorization;
   if (!authHeader) {
-    (req as any).user = { type: "admin" };
-    return next();
+    res.status(401).json({ error: "Yêu cầu quyền đăng nhập (Thiếu token)" });
+    return;
   }
   const token = authHeader.replace("Bearer ", "").trim();
   
@@ -831,9 +839,7 @@ const requireAdminOrGroupLeader = (req: express.Request, res: express.Response, 
     return next();
   }
 
-  // Default to admin if no valid leader session is found, removing restrictions
-  (req as any).user = { type: "admin" };
-  next();
+  res.status(403).json({ error: "Không có quyền thực hiện hành động này" });
 };
 
 // REST APIs
@@ -1295,8 +1301,6 @@ app.put("/api/teachers/:id", requireAdminOrGroupLeader, (req, res) => {
   const user = (req as any).user;
 
   // Check permissions if the user is a Group Leader
-  // (req as any).user is allowed full access by default, so we bypass restrictions
-  /*
   if (user && user.type === "leader") {
     // Group Leaders can only manage teachers in their own department
     if (current.department !== user.department) {
@@ -1317,7 +1321,6 @@ app.put("/api/teachers/:id", requireAdminOrGroupLeader, (req, res) => {
       return;
     }
   }
-  */
 
   // Merge text fields
   if (req.body.name) current.name = req.body.name;

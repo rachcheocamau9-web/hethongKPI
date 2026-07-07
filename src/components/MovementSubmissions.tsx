@@ -959,7 +959,7 @@ export default function MovementSubmissions({
                       <th className="px-4 py-3">Tên bài dự thi & Giải pháp</th>
                       <th className="px-4 py-3">Phong trào / Cuộc thi</th>
                       <th className="px-4 py-3 text-center">Trạng thái</th>
-                      {(isAdmin || isLeader) && <th className="px-4 py-3 text-center">Hành động</th>}
+                      {isAdmin && <th className="px-4 py-3 text-center">Hành động</th>}
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-slate-100 text-xs font-medium text-slate-700">
@@ -1016,7 +1016,7 @@ export default function MovementSubmissions({
                         </td>
 
                         {/* Actions (Delete only) */}
-                        {(isAdmin || isLeader) && (
+                        {isAdmin && (
                           <td className="px-4 py-3 text-center">
                             <button
                               onClick={() => handleDeleteSubmission(sub.movId, sub.id)}
@@ -1037,13 +1037,13 @@ export default function MovementSubmissions({
           </div>
 
           {/* Admin Panel for managing Exams/Movements */}
-          {(isAdmin || isLeader) && (
+          {isAdmin && (
             <div className="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-xs space-y-4">
               <div className="flex items-center justify-between border-b border-slate-100 pb-3">
                 <div>
                   <h4 className="font-extrabold text-xs text-slate-900 uppercase tracking-wider flex items-center gap-1.5">
                     <Award size={16} className="text-amber-500" />
-                    Quản lý Kì thi & Phong trào
+                    Quản lý Kì thi & Phong trào (Admin)
                   </h4>
                   <p className="text-[10px] text-slate-500 font-semibold mt-0.5">Mở kì thi nộp bài mới, đặt thời gian bắt đầu & kết thúc cụ thể</p>
                 </div>
