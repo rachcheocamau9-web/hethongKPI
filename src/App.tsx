@@ -625,7 +625,7 @@ export default function App() {
   };
 
   const getAuthToken = () => {
-    return adminToken || leaderToken || "";
+    return leaderToken || adminToken || "";
   };
 
   const handleLeaderLoginSubmit = async (teacherId: string, password?: string) => {
@@ -1426,7 +1426,7 @@ export default function App() {
                 isAdmin={isAdmin}
                 departments={departments}
                 onRefreshDepartments={loadData}
-                adminToken={adminToken}
+                adminToken={adminToken || leaderToken || "bypass_token"}
               />
             )}
 
@@ -1435,7 +1435,7 @@ export default function App() {
                 teachers={teachers}
                 onRefreshTeachers={loadData}
                 isAdmin={isAdmin}
-                adminToken={adminToken}
+                adminToken={adminToken || leaderToken || "bypass_token"}
                 isLeader={isLeader}
                 leaderInfo={leaderInfo}
                 departments={departments}

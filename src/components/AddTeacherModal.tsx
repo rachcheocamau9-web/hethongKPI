@@ -116,7 +116,7 @@ export default function AddTeacherModal({
       });
       onClose();
     } catch (err) {
-      alert("Đã xảy ra lỗi khi thêm giáo viên.");
+      alert(err instanceof Error ? err.message : "Đã xảy ra lỗi khi thêm giáo viên.");
     } finally {
       setIsSubmitting(false);
     }
@@ -250,7 +250,7 @@ export default function AddTeacherModal({
         onClose();
       }
     } catch (err) {
-      alert("Có lỗi xảy ra trong quá trình nhập đồng loạt.");
+      alert(err instanceof Error ? err.message : "Có lỗi xảy ra trong quá trình nhập đồng loạt.");
     } finally {
       setIsSubmitting(false);
     }

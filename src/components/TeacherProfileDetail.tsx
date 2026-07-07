@@ -355,7 +355,7 @@ export default function TeacherProfileDetail({
           >
             <ArrowLeft size={14} /> Quay lại danh sách
           </button>
-          {onDeleteTeacher && isAdmin && (
+          {onDeleteTeacher && (isAdmin || isLeader) && (
             <button
               onClick={async () => {
                 if (window.confirm(`Bạn có chắc chắn muốn xóa giáo viên "${teacher.name}" khỏi hệ thống không? Hành động này không thể hoàn tác.`)) {
@@ -752,7 +752,7 @@ export default function TeacherProfileDetail({
           </div>
 
           {/* Transfer Department Widget */}
-          {isAdmin && (
+          {(isAdmin || isLeader) && (
             <div className="bg-white p-5 rounded-xl border border-slate-200/80 shadow-xs space-y-4">
               <div className="flex items-center gap-2">
                 <div className="bg-amber-50 text-amber-600 p-1.5 rounded-lg border border-amber-200/50">

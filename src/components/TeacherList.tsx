@@ -126,7 +126,7 @@ export default function TeacherList({
           <h2 className="text-base font-bold text-slate-800">Danh Sách & Đánh Giá Chỉ Số KPI Giáo Viên</h2>
           <p className="text-xs text-slate-500">Tìm kiếm, lọc danh sách và quản lý hồ sơ đánh giá của giáo viên.</p>
         </div>
-        {isAdmin && (
+        {(isAdmin || isLeader) && (
           <button
             onClick={onAddTeacherClick}
             className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2.5 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 transition-all shadow-sm hover:shadow-md cursor-pointer active:scale-95"
@@ -278,7 +278,7 @@ export default function TeacherList({
                       >
                         Đánh giá chi tiết <ArrowRight size={14} />
                       </button>
-                      {onDeleteTeacher && isAdmin && (
+                      {onDeleteTeacher && (isAdmin || isLeader) && (
                         <button
                           title="Xóa giáo viên"
                           className="text-slate-300 hover:text-rose-600 p-1 rounded-md hover:bg-rose-50/50 transition-colors cursor-pointer"
@@ -380,7 +380,7 @@ export default function TeacherList({
                   >
                     Xem <ArrowRight size={12} />
                   </button>
-                  {onDeleteTeacher && isAdmin && (
+                  {onDeleteTeacher && (isAdmin || isLeader) && (
                     <button
                       title="Xóa"
                       className="text-rose-500 hover:text-rose-700 p-1.5 rounded-md bg-rose-50 border border-rose-100 cursor-pointer"
