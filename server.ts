@@ -8,7 +8,6 @@ import path from "path";
 import fs from "fs";
 import dotenv from "dotenv";
 import AdmZip from "adm-zip";
-import { createServer as createViteServer } from "vite";
 import { GoogleGenAI, Type } from "@google/genai";
 
 dotenv.config();
@@ -1843,6 +1842,7 @@ Yêu cầu đầu ra bằng Tiếng Việt chuẩn mực sư phạm và gửi l�
 // Serve Vite in development, static in production
 async function startServer() {
   if (process.env.NODE_ENV !== "production") {
+    const { createServer: createViteServer } = await import("vite");
     const vite = await createViteServer({
       server: { middlewareMode: true },
       appType: "spa",
@@ -1856,9 +1856,11 @@ async function startServer() {
     });
   }
 
-  app.listen(PORT, "0.0.0.0", () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
-  });
+  if (!process.env.VERCEL) {
+    app.listen(PORT, "0.0.0.0", () => {
+      console.log(`Server is running on http://localhost:${PORT}`);
+    });
+  }
 }
 
 startServer();
