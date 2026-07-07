@@ -8,6 +8,7 @@ import path from "path";
 import fs from "fs";
 import dotenv from "dotenv";
 import AdmZip from "adm-zip";
+import { createServer as createViteServer } from "vite";
 import { GoogleGenAI, Type } from "@google/genai";
 
 dotenv.config();
@@ -28,44 +29,6 @@ const PORT = 3000;
 app.use(express.json({ limit: "50mb" }));
 app.use(express.urlencoded({ limit: "50mb", extended: true }));
 
-// Ensure req.body is defined and try parsing if it is passed as a string
-app.use((req, res, next) => {
-  if (req.body && typeof req.body === "string") {
-    try {
-      req.body = JSON.parse(req.body);
-    } catch (e) {
-      // Ignore parsing error, keep as is
-    }
-  }
-  if (!req.body) {
-    req.body = {};
-  }
-  next();
-});
-
-// Vercel Path Rewriting Middleware
-app.use((req, res, next) => {
-  const p = req.query.path;
-  if (p && typeof p === "string") {
-    delete req.query.path;
-    const queryKeys = Object.keys(req.query);
-    let queryString = "";
-    if (queryKeys.length > 0) {
-      queryString = "?" + queryKeys.map(k => `${encodeURIComponent(k)}=${encodeURIComponent(String(req.query[k]))}`).join("&");
-    }
-    let basePath = p;
-    if (!basePath.startsWith("/")) {
-      basePath = "/" + basePath;
-    }
-    if (!basePath.startsWith("/api") && !basePath.startsWith("/uploads")) {
-      basePath = "/api" + basePath;
-    }
-    req.url = basePath + queryString;
-    console.log(`[Vercel Rewriter] Rewrote path to: ${req.url}`);
-  }
-  next();
-});
-
 // Path to data store
 let DATA_DIR = path.join(process.cwd(), "data");
 let UPLOADS_DIR = path.join(process.cwd(), "uploads");
@@ -73,10 +36,7 @@ let UPLOADS_DIR = path.join(process.cwd(), "uploads");
 // Detect if we are on Vercel or a read-only environment
 let isReadOnly = false;
 try {
-  // Ensure DATA_DIR exists before test write
-  if (!fs.existsSync(DATA_DIR)) {
-    fs.mkdirSync(DATA_DIR, { recursive: true });
-  }
+  // Try writing to data directory to see if writable
   const testFile = path.join(DATA_DIR, ".write_test");
   fs.writeFileSync(testFile, "test");
   fs.unlinkSync(testFile);
@@ -88,47 +48,27 @@ if (isReadOnly || process.env.VERCEL) {
   const TMP_DATA_DIR = path.join("/tmp", "data");
   const TMP_UPLOADS_DIR = path.join("/tmp", "uploads");
 
-  try {
-    if (!fs.existsSync(TMP_DATA_DIR)) {
-      fs.mkdirSync(TMP_DATA_DIR, { recursive: true });
-    }
-    if (!fs.existsSync(TMP_UPLOADS_DIR)) {
-      fs.mkdirSync(TMP_UPLOADS_DIR, { recursive: true });
-    }
-  } catch (dirErr) {
-    console.error("Failed to create temporary directories:", dirErr);
+  if (!fs.existsSync(TMP_DATA_DIR)) {
+    fs.mkdirSync(TMP_DATA_DIR, { recursive: true });
+  }
+  if (!fs.existsSync(TMP_UPLOADS_DIR)) {
+    fs.mkdirSync(TMP_UPLOADS_DIR, { recursive: true });
   }
 
   // Copy original data files to /tmp/data if they don't exist there yet
-  let originalDataDir = path.join(process.cwd(), "data");
-  const fallbackPaths = [
-    path.join(__dirname, "data"),
-    path.join(__dirname, "../data"),
-    path.join("/var/task", "data"),
-  ];
-
-  for (const fallback of fallbackPaths) {
-    if (!fs.existsSync(originalDataDir) && fs.existsSync(fallback)) {
-      originalDataDir = fallback;
-    }
-  }
-
+  const originalDataDir = path.join(process.cwd(), "data");
   if (fs.existsSync(originalDataDir)) {
-    try {
-      const files = fs.readdirSync(originalDataDir);
-      for (const file of files) {
-        const src = path.join(originalDataDir, file);
-        const dest = path.join(TMP_DATA_DIR, file);
-        if (!fs.existsSync(dest) && fs.statSync(src).isFile()) {
-          try {
-            fs.copyFileSync(src, dest);
-          } catch (copyErr) {
-            console.error(`Failed to copy ${file} to /tmp/data:`, copyErr);
-          }
+    const files = fs.readdirSync(originalDataDir);
+    for (const file of files) {
+      const src = path.join(originalDataDir, file);
+      const dest = path.join(TMP_DATA_DIR, file);
+      if (!fs.existsSync(dest) && fs.statSync(src).isFile()) {
+        try {
+          fs.copyFileSync(src, dest);
+        } catch (copyErr) {
+          console.error(`Failed to copy ${file} to /tmp/data:`, copyErr);
         }
       }
-    } catch (readErr) {
-      console.error("Failed to read original data directory:", readErr);
     }
   }
 
@@ -143,12 +83,8 @@ const MOVEMENTS_FILE = path.join(DATA_DIR, "movements.json");
 const DEPARTMENTS_FILE = path.join(DATA_DIR, "departments.json");
 
 // Ensure data directory exists
-try {
-  if (!fs.existsSync(DATA_DIR)) {
-    fs.mkdirSync(DATA_DIR, { recursive: true });
-  }
-} catch (err) {
-  console.error("Error creating DATA_DIR:", err);
+if (!fs.existsSync(DATA_DIR)) {
+  fs.mkdirSync(DATA_DIR, { recursive: true });
 }
 if (!fs.existsSync(UPLOADS_DIR)) {
   fs.mkdirSync(UPLOADS_DIR, { recursive: true });
@@ -853,11 +789,6 @@ function getAdminPassword(): string {
       if (config && config.password) {
         return config.password;
       }
-    } else {
-      // Auto-initialize admin.json with default password if it doesn't exist
-      const defaultPassword = process.env.ADMIN_PASSWORD || "1231987Dat";
-      saveAdminPassword(defaultPassword);
-      return defaultPassword;
     }
   } catch (err) {
     console.error("Error reading admin config:", err);
@@ -875,21 +806,16 @@ function saveAdminPassword(password: string) {
 
 // POST secure admin login
 app.post("/api/admin/login", (req, res) => {
-  try {
-    const { password } = req.body || {};
-    const ADMIN_PASSWORD = getAdminPassword();
-    
-    if (password === ADMIN_PASSWORD) {
-      // Generate a secure, hard-to-guess token
-      const token = "admin_" + Math.random().toString(36).substring(2) + Date.now().toString(36);
-      activeSessions.add(token);
-      res.json({ success: true, token });
-    } else {
-      res.status(401).json({ error: "Mật khẩu đăng nhập quản trị không đúng!" });
-    }
-  } catch (err: any) {
-    console.error("Admin login error:", err);
-    res.status(500).json({ error: `Lỗi hệ thống trong admin login: ${err.message}` });
+  const { password } = req.body;
+  const ADMIN_PASSWORD = getAdminPassword();
+  
+  if (password === ADMIN_PASSWORD) {
+    // Generate a secure, hard-to-guess token
+    const token = "admin_" + Math.random().toString(36).substring(2) + Date.now().toString(36);
+    activeSessions.add(token);
+    res.json({ success: true, token });
+  } else {
+    res.status(401).json({ error: "Mật khẩu đăng nhập quản trị không đúng!" });
   }
 });
 
@@ -963,56 +889,51 @@ app.post("/api/admin/logout", (req, res) => {
 
 // POST secure Group Leader login (Tổ trưởng / Tổ phó)
 app.post("/api/leader/login", (req, res) => {
-  try {
-    const { teacherId, password } = req.body || {};
-    if (!teacherId) {
-      res.status(400).json({ error: "Thiếu thông tin mã số giáo viên" });
-      return;
-    }
-
-    const teachers = loadTeachers();
-    const foundTeacher = teachers.find(t => t.id === teacherId);
-    if (!foundTeacher) {
-      res.status(404).json({ error: "Không tìm thấy thông tin giáo viên" });
-      return;
-    }
-
-    const role = foundTeacher.groupRole || "Thành viên";
-    if (role !== "Tổ trưởng" && role !== "Tổ phó") {
-      res.status(403).json({ error: "Giáo viên này không phải là Tổ trưởng hoặc Tổ phó" });
-      return;
-    }
-
-    // Validate password
-    const expectedPassword = foundTeacher.password || "123456";
-    if (password !== expectedPassword) {
-      res.status(401).json({ error: "Mật khẩu đăng nhập không chính xác!" });
-      return;
-    }
-
-    // Generate session token
-    const token = "leader_" + Math.random().toString(36).substring(2) + Date.now().toString(36);
-    activeLeaderSessions.set(token, {
-      teacherId: foundTeacher.id,
-      department: foundTeacher.department,
-      groupRole: role,
-      name: foundTeacher.name
-    });
-
-    res.json({
-      success: true,
-      token,
-      leader: {
-        id: foundTeacher.id,
-        name: foundTeacher.name,
-        department: foundTeacher.department,
-        groupRole: role
-      }
-    });
-  } catch (err: any) {
-    console.error("Leader login error:", err);
-    res.status(500).json({ error: `Lỗi hệ thống trong leader login: ${err.message}` });
+  const { teacherId, password } = req.body;
+  if (!teacherId) {
+    res.status(400).json({ error: "Thiếu thông tin mã số giáo viên" });
+    return;
   }
+
+  const teachers = loadTeachers();
+  const foundTeacher = teachers.find(t => t.id === teacherId);
+  if (!foundTeacher) {
+    res.status(404).json({ error: "Không tìm thấy thông tin giáo viên" });
+    return;
+  }
+
+  const role = foundTeacher.groupRole || "Thành viên";
+  if (role !== "Tổ trưởng" && role !== "Tổ phó") {
+    res.status(403).json({ error: "Giáo viên này không phải là Tổ trưởng hoặc Tổ phó" });
+    return;
+  }
+
+  // Validate password
+  const expectedPassword = foundTeacher.password || "123456";
+  if (password !== expectedPassword) {
+    res.status(401).json({ error: "Mật khẩu đăng nhập không chính xác!" });
+    return;
+  }
+
+  // Generate session token
+  const token = "leader_" + Math.random().toString(36).substring(2) + Date.now().toString(36);
+  activeLeaderSessions.set(token, {
+    teacherId: foundTeacher.id,
+    department: foundTeacher.department,
+    groupRole: role,
+    name: foundTeacher.name
+  });
+
+  res.json({
+    success: true,
+    token,
+    leader: {
+      id: foundTeacher.id,
+      name: foundTeacher.name,
+      department: foundTeacher.department,
+      groupRole: role
+    }
+  });
 });
 
 // POST verify Group Leader token
@@ -1922,8 +1843,6 @@ Yêu cầu đầu ra bằng Tiếng Việt chuẩn mực sư phạm và gửi l�
 // Serve Vite in development, static in production
 async function startServer() {
   if (process.env.NODE_ENV !== "production") {
-    const viteModule = "vite";
-    const { createServer: createViteServer } = await import(/* @vite-ignore */ viteModule);
     const vite = await createViteServer({
       server: { middlewareMode: true },
       appType: "spa",
@@ -1937,11 +1856,9 @@ async function startServer() {
     });
   }
 
-  if (!process.env.VERCEL) {
-    app.listen(PORT, "0.0.0.0", () => {
-      console.log(`Server is running on http://localhost:${PORT}`);
-    });
-  }
+  app.listen(PORT, "0.0.0.0", () => {
+    console.log(`Server is running on http://localhost:${PORT}`);
+  });
 }
 
 startServer();

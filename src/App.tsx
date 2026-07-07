@@ -29,9 +29,7 @@ import {
   LogOut,
   Key,
   Menu,
-  X,
-  Eye,
-  EyeOff
+  X
 } from "lucide-react";
 
 function ChangePasswordModal({ 
@@ -49,9 +47,6 @@ function ChangePasswordModal({
   const [error, setError] = useState("");
   const [successMsg, setSuccessMsg] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [showOldPassword, setShowOldPassword] = useState(false);
-  const [showNewPassword, setShowNewPassword] = useState(false);
-  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -106,69 +101,42 @@ function ChangePasswordModal({
             <label className="text-[10px] font-bold uppercase tracking-wider text-slate-500 block">
               Mật khẩu hiện tại:
             </label>
-            <div className="relative font-mono">
-              <input
-                type={showOldPassword ? "text" : "password"}
-                placeholder="Nhập mật khẩu hiện tại"
-                value={oldPassword}
-                onChange={(e) => setOldPassword(e.target.value)}
-                required
-                className="w-full bg-slate-50 border border-slate-200 rounded-xl pl-3 pr-10 py-2 text-xs focus:outline-none focus:border-slate-400 focus:bg-white transition-all font-medium"
-              />
-              <button
-                type="button"
-                onClick={() => setShowOldPassword(!showOldPassword)}
-                className="absolute inset-y-0 right-0 pr-3 flex items-center text-slate-400 hover:text-slate-600 focus:outline-none cursor-pointer"
-              >
-                {showOldPassword ? <EyeOff size={14} /> : <Eye size={14} />}
-              </button>
-            </div>
+            <input
+              type="password"
+              placeholder="Nhập mật khẩu hiện tại"
+              value={oldPassword}
+              onChange={(e) => setOldPassword(e.target.value)}
+              required
+              className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs focus:outline-none focus:border-slate-400 focus:bg-white transition-all font-medium font-mono"
+            />
           </div>
 
           <div className="space-y-1">
             <label className="text-[10px] font-bold uppercase tracking-wider text-slate-500 block">
               Mật khẩu mới:
             </label>
-            <div className="relative font-mono">
-              <input
-                type={showNewPassword ? "text" : "password"}
-                placeholder="Nhập mật khẩu mới"
-                value={newPassword}
-                onChange={(e) => setNewPassword(e.target.value)}
-                required
-                className="w-full bg-slate-50 border border-slate-200 rounded-xl pl-3 pr-10 py-2 text-xs focus:outline-none focus:border-slate-400 focus:bg-white transition-all font-medium"
-              />
-              <button
-                type="button"
-                onClick={() => setShowNewPassword(!showNewPassword)}
-                className="absolute inset-y-0 right-0 pr-3 flex items-center text-slate-400 hover:text-slate-600 focus:outline-none cursor-pointer"
-              >
-                {showNewPassword ? <EyeOff size={14} /> : <Eye size={14} />}
-              </button>
-            </div>
+            <input
+              type="password"
+              placeholder="Nhập mật khẩu mới"
+              value={newPassword}
+              onChange={(e) => setNewPassword(e.target.value)}
+              required
+              className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs focus:outline-none focus:border-slate-400 focus:bg-white transition-all font-medium font-mono"
+            />
           </div>
 
           <div className="space-y-1">
             <label className="text-[10px] font-bold uppercase tracking-wider text-slate-500 block">
               Xác nhận mật khẩu mới:
             </label>
-            <div className="relative font-mono">
-              <input
-                type={showConfirmPassword ? "text" : "password"}
-                placeholder="Xác nhận mật khẩu mới"
-                value={confirmPassword}
-                onChange={(e) => setConfirmPassword(e.target.value)}
-                required
-                className="w-full bg-slate-50 border border-slate-200 rounded-xl pl-3 pr-10 py-2 text-xs focus:outline-none focus:border-slate-400 focus:bg-white transition-all font-medium"
-              />
-              <button
-                type="button"
-                onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-                className="absolute inset-y-0 right-0 pr-3 flex items-center text-slate-400 hover:text-slate-600 focus:outline-none cursor-pointer"
-              >
-                {showConfirmPassword ? <EyeOff size={14} /> : <Eye size={14} />}
-              </button>
-            </div>
+            <input
+              type="password"
+              placeholder="Xác nhận mật khẩu mới"
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+              required
+              className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs focus:outline-none focus:border-slate-400 focus:bg-white transition-all font-medium font-mono"
+            />
           </div>
 
           {error && (
@@ -211,7 +179,6 @@ function GroupLeaderLoginModal({ teachers, onSubmit, onClose }: { teachers: Teac
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [showPassword, setShowPassword] = useState(false);
 
   const leaders = teachers.filter(t => t.groupRole === "Tổ trưởng" || t.groupRole === "Tổ phó");
   
@@ -282,23 +249,14 @@ function GroupLeaderLoginModal({ teachers, onSubmit, onClose }: { teachers: Teac
                 <label className="text-[10px] font-bold uppercase tracking-wider text-slate-500 block">
                   Nhập mật khẩu của bạn:
                 </label>
-                <div className="relative font-mono">
-                  <input
-                    type={showPassword ? "text" : "password"}
-                    placeholder="Mật khẩu đăng nhập (Mặc định: 123456)"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    autoFocus
-                    className="w-full bg-slate-50 border border-slate-200 rounded-xl pl-3 pr-10 py-2.5 text-xs focus:outline-none focus:border-slate-400 focus:bg-white transition-all font-medium"
-                  />
-                  <button
-                    type="button"
-                    onClick={() => setShowPassword(!showPassword)}
-                    className="absolute inset-y-0 right-0 pr-3 flex items-center text-slate-400 hover:text-slate-600 focus:outline-none cursor-pointer"
-                  >
-                    {showPassword ? <EyeOff size={14} /> : <Eye size={14} />}
-                  </button>
-                </div>
+                <input
+                  type="password"
+                  placeholder="Mật khẩu đăng nhập (Mặc định: 123456)"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  autoFocus
+                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2.5 text-xs focus:outline-none focus:border-slate-400 focus:bg-white transition-all font-medium font-mono"
+                />
               </div>
 
               {error && (
@@ -429,7 +387,6 @@ export default function App() {
   const [isAdminLoginModalOpen, setIsAdminLoginModalOpen] = useState(false);
   const [adminPasswordInput, setAdminPasswordInput] = useState("");
   const [adminLoginError, setAdminLoginError] = useState("");
-  const [showAdminPassword, setShowAdminPassword] = useState(false);
 
   // Group Leader Authentication State
   const [isLeader, setIsLeader] = useState<boolean>(false);
@@ -581,25 +538,10 @@ export default function App() {
         setAdminPasswordInput("");
         loadData();
       } else {
-        let errorMessage = "Mật khẩu không chính xác!";
-        try {
-          const contentType = res.headers.get("content-type");
-          if (contentType && contentType.includes("application/json")) {
-            const data = await res.json();
-            errorMessage = data.error || errorMessage;
-          } else {
-            const text = await res.text();
-            console.error("Non-JSON admin login error:", text);
-            errorMessage = `Lỗi hệ thống (${res.status})`;
-          }
-        } catch (parseErr) {
-          console.error("Error parsing login error response:", parseErr);
-          errorMessage = `Lỗi hệ thống (${res.status})`;
-        }
-        setAdminLoginError(errorMessage);
+        const data = await res.json();
+        setAdminLoginError(data.error || "Mật khẩu không chính xác!");
       }
     } catch (err) {
-      console.error("Network error during admin login:", err);
       setAdminLoginError("Lỗi kết nối máy chủ");
     }
   };
@@ -646,26 +588,10 @@ export default function App() {
         setActiveTab("teachers");
         return true;
       } else {
-        try {
-          const contentType = res.headers.get("content-type");
-          if (contentType && contentType.includes("application/json")) {
-            const data = await res.json();
-            if (data.error) {
-              alert(data.error);
-            }
-          } else {
-            const text = await res.text();
-            console.error("Non-JSON leader login error:", text);
-            alert(`Lỗi hệ thống (${res.status})`);
-          }
-        } catch (e) {
-          console.error("Error parsing leader login response:", e);
-          alert(`Lỗi hệ thống (${res.status})`);
-        }
+        const data = await res.json();
         return false;
       }
     } catch (err: any) {
-      console.error("Network error during leader login:", err);
       alert("Lỗi kết nối máy chủ");
       return false;
     }
@@ -1565,23 +1491,16 @@ export default function App() {
                 <label className="text-[11px] font-bold text-slate-500 block uppercase tracking-wide">
                   Mật khẩu xác thực (Mật khẩu Admin)
                 </label>
-                <div className="relative font-mono">
+                <div className="relative">
                   <input
-                    type={showAdminPassword ? "text" : "password"}
+                    type="password"
                     placeholder="Nhập mật khẩu để truy cập..."
                     value={adminPasswordInput}
                     onChange={(e) => setAdminPasswordInput(e.target.value)}
                     required
                     autoFocus
-                    className="w-full bg-slate-50 hover:bg-slate-100/50 focus:bg-white border border-slate-200 rounded-xl pl-4 pr-10 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-slate-950 focus:border-transparent transition-all"
+                    className="w-full bg-slate-50 hover:bg-slate-100/50 focus:bg-white border border-slate-200 rounded-xl px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-slate-950 focus:border-transparent transition-all font-mono"
                   />
-                  <button
-                    type="button"
-                    onClick={() => setShowAdminPassword(!showAdminPassword)}
-                    className="absolute inset-y-0 right-0 pr-3 flex items-center text-slate-400 hover:text-slate-600 focus:outline-none cursor-pointer"
-                  >
-                    {showAdminPassword ? <EyeOff size={15} /> : <Eye size={15} />}
-                  </button>
                 </div>
                 {adminLoginError && (
                   <p className="text-rose-500 text-[11px] font-bold mt-1">
