@@ -1,0 +1,6 @@
+{
+  "name": "Teacher KPI Tracker",
+  "description": "Ứng dụng đánh giá công việc KPI và theo dõi hiệu suất của từng giáo viên một cách minh bạch và chính xác.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,2021 @@
+[
+  {
+    "id": "t1",
+    "name": "Nguyễn Minh Anh",
+    "email": "minhanh.c1@school.edu.vn",
+    "subject": "Chủ nhiệm (Khối 1)",
+    "department": "Tổ Khối 1",
+    "avatarUrl": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&auto=format&fit=crop&q=80",
+    "kpiPeriod": "Tháng 06/2026",
+    "academicYear": "2025-2026",
+    "overallScore": 94.6,
+    "status": "Xuất sắc",
+    "kpis": [
+      {
+        "id": "teaching",
+        "name": "Giảng dạy & Chăm sóc học sinh",
+        "weight": 40,
+        "metrics": [
+          {
+            "id": "attendance",
+            "name": "Tỉ lệ chuyên cần của học sinh",
+            "description": "Tỉ lệ học sinh tiểu học đi học đều đặn, chuyên cần",
+            "target": 98,
+            "actual": 99.2,
+            "weight": 30
+          },
+          {
+            "id": "lesson_plan",
+            "name": "Thiết kế bài giảng sinh động",
+            "description": "Sử dụng đồ dùng trực quan, học cụ, bài giảng số tương tác",
+            "target": 95,
+            "actual": 98,
+            "weight": 30
+          },
+          {
+            "id": "observation",
+            "name": "Đánh giá nhận xét định kỳ (TT 27)",
+            "description": "Đánh giá thường xuyên, nhận xét năng lực, phẩm chất học sinh trên học bạ điện tử",
+            "target": 100,
+            "actual": 100,
+            "weight": 40
+          }
+        ]
+      },
+      {
+        "id": "professionalism",
+        "name": "Hồ sơ & Chuyên môn Tiểu học",
+        "weight": 30,
+        "metrics": [
+          {
+            "id": "grading_time",
+            "name": "Hoàn thiện Sổ chủ nhiệm đúng hạn",
+            "description": "Cập nhật hồ sơ lớp chủ nhiệm, kế hoạch tuần đúng hạn",
+            "target": 100,
+            "actual": 100,
+            "weight": 40
+          },
+          {
+            "id": "training",
+            "name": "Tham gia bồi dưỡng Tổ Khối",
+            "description": "Tham gia sinh hoạt chuyên môn khối 1, bồi dưỡng SGK mới",
+            "target": 90,
+            "actual": 95,
+            "weight": 30
+          },
+          {
+            "id": "test_design",
+            "name": "Vở sạch - Chữ đẹp & Rèn nếp",
+            "description": "Đánh giá sự giữ gìn sách vở và tiến bộ chữ viết của học sinh",
+            "target": 85,
+            "actual": 90,
+            "weight": 30
+          }
+        ]
+      },
+      {
+        "id": "activities",
+        "name": "Phong trào & Kết nối Phụ huynh",
+        "weight": 30,
+        "metrics": [
+          {
+            "id": "parent_feedback",
+            "name": "Liên lạc & Đồng thuận từ Phụ huynh",
+            "description": "Điểm phản hồi hài lòng từ phụ huynh qua nhóm lớp, họp cha mẹ học sinh",
+            "target": 90,
+            "actual": 96,
+            "weight": 40
+          },
+          {
+            "id": "extracurricular",
+            "name": "Sinh hoạt Sao & Ngoại khóa",
+            "description": "Tổ chức hoạt động trải nghiệm, sinh hoạt tập thể, nề nếp Sao Nhi đồng",
+            "target": 80,
+            "actual": 90,
+            "weight": 30
+          },
+          {
+            "id": "student_progress",
+            "name": "Rèn nếp bán trú & tự phục vụ",
+            "description": "Mức độ tự lập của học sinh trong ăn uống, ngủ trưa và giữ vệ sinh",
+            "target": 85,
+            "actual": 92,
+            "weight": 30
+          }
+        ]
+      }
+    ],
+    "evaluations": [
+      {
+        "id": "e1_1",
+        "period": "Tháng 05/2026",
+        "overallScore": 93.1,
+        "status": "Xuất sắc",
+        "evaluator": "Hiệu trưởng Lê Thị Thanh",
+        "evaluatedAt": "2026-05-31",
+        "feedback": "Cô Minh Anh là giáo viên cốt cán khối 1 cực kỳ tâm huyết. Cô rèn nếp rất tốt cho các con vừa bước vào tiểu học, phối hợp rất mật thiết với phụ huynh lớp 1A. Sổ sách và nhận xét học bạ chuẩn mực theo Thông tư 27."
+      }
+    ],
+    "groupRole": "Tổ trưởng",
+    "teachingRole": "Giáo viên chủ nhiệm",
+    "assignedClass": "Lớp 1A"
+  },
+  {
+    "id": "t2",
+    "name": "Lê Văn Nam",
+    "email": "namle.c1@school.edu.vn",
+    "subject": "Giáo dục thể chất",
+    "department": "Tổ Bộ môn",
+    "avatarUrl": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&auto=format&fit=crop&q=80",
+    "kpiPeriod": "Tháng 06/2026",
+    "academicYear": "2025-2026",
+    "overallScore": 83.2,
+    "status": "Khá",
+    "kpis": [
+      {
+        "id": "teaching",
+        "name": "Giảng dạy & Chăm sóc học sinh",
+        "weight": 40,
+        "metrics": [
+          {
+            "id": "attendance",
+            "name": "Tỉ lệ chuyên cần của học sinh",
+            "description": "Tỉ lệ học student tiểu học đi học đều đặn, chuyên cần",
+            "target": 98,
+            "actual": 95,
+            "weight": 30
+          },
+          {
+            "id": "lesson_plan",
+            "name": "Thiết kế bài giảng sinh động",
+            "description": "Sử dụng đồ dùng trực quan, học cụ, bài giảng số tương tác",
+            "target": 95,
+            "actual": 90,
+            "weight": 30
+          },
+          {
+            "id": "observation",
+            "name": "Đánh giá nhận xét định kỳ (TT 27)",
+            "description": "Đánh giá thường xuyên, nhận xét năng lực, phẩm chất học sinh trên học bạ điện tử",
+            "target": 100,
+            "actual": 92,
+            "weight": 40
+          }
+        ]
+      },
+      {
+        "id": "professionalism",
+        "name": "Hồ sơ & Chuyên môn Tiểu học",
+        "weight": 30,
+        "metrics": [
+          {
+            "id": "grading_time",
+            "name": "Hoàn thiện Sổ chủ nhiệm đúng hạn",
+            "description": "Cập nhật sổ bộ môn và nhật ký giảng dạy",
+            "target": 100,
+            "actual": 90,
+            "weight": 40
+          },
+          {
+            "id": "training",
+            "name": "Tham gia bồi dưỡng Tổ Khối",
+            "description": "Tham gia sinh hoạt chuyên môn bộ môn, tập huấn chuyên đề thể thao học đường",
+            "target": 90,
+            "actual": 92,
+            "weight": 30
+          },
+          {
+            "id": "test_design",
+            "name": "Vở sạch - Chữ đẹp & Rèn nếp",
+            "description": "Rèn nề nếp tập thể dục giữa giờ và thói quen thể chất lành mạnh",
+            "target": 85,
+            "actual": 80,
+            "weight": 30
+          }
+        ]
+      },
+      {
+        "id": "activities",
+        "name": "Phong trào & Kết nối Phụ huynh",
+        "weight": 30,
+        "metrics": [
+          {
+            "id": "parent_feedback",
+            "name": "Liên lạc & Đồng thuận từ Phụ huynh",
+            "description": "Điểm phản hồi hài lòng từ phụ huynh qua nhóm lớp, họp cha mẹ học sinh",
+            "target": 90,
+            "actual": 85,
+            "weight": 40
+          },
+          {
+            "id": "extracurricular",
+            "name": "Sinh hoạt Sao & Ngoại khóa",
+            "description": "Tổ chức hoạt động trải nghiệm, giải đấu thể thao, câu lạc bộ bóng rổ/bóng đá tiểu học",
+            "target": 80,
+            "actual": 95,
+            "weight": 30
+          },
+          {
+            "id": "student_progress",
+            "name": "Rèn nếp bán trú & tự phục vụ",
+            "description": "Hỗ trợ học sinh rèn luyện tinh thần tự quản, thể lực khỏe mạnh",
+            "target": 85,
+            "actual": 80,
+            "weight": 30
+          }
+        ]
+      }
+    ],
+    "evaluations": [
+      {
+        "id": "e2_1",
+        "period": "Tháng 05/2026",
+        "overallScore": 82.5,
+        "status": "Khá",
+        "evaluator": "Phó Hiệu trưởng Lê Hồng Phong",
+        "evaluatedAt": "2026-05-30",
+        "feedback": "Thầy Nam rất tích cực tổ chức các phong trào thể dục thể thao, hội khỏe Phù Đổng cấp trường cho học sinh tiểu học. Cần chú ý hoàn thiện sổ sách theo dõi đúng hạn hơn."
+      }
+    ],
+    "groupRole": "Tổ phó",
+    "teachingRole": "Giáo viên bộ môn",
+    "assignedClass": "Khối 1, 2, 3"
+  },
+  {
+    "id": "t3",
+    "name": "Trần Thị Hương",
+    "email": "huongtran.c1@school.edu.vn",
+    "subject": "Chủ nhiệm (Khối 5)",
+    "department": "Tổ Khối 5",
+    "avatarUrl": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&auto=format&fit=crop&q=80",
+    "kpiPeriod": "Tháng 06/2026",
+    "academicYear": "2025-2026",
+    "overallScore": 88.5,
+    "status": "Khá",
+    "kpis": [
+      {
+        "id": "teaching",
+        "name": "Giảng dạy & Chăm sóc học sinh",
+        "weight": 40,
+        "metrics": [
+          {
+            "id": "attendance",
+            "name": "Tỉ lệ chuyên cần của học sinh",
+            "description": "Tỉ lệ học sinh tiểu học đi học đều đặn, chuyên cần",
+            "target": 98,
+            "actual": 98.5,
+            "weight": 30
+          },
+          {
+            "id": "lesson_plan",
+            "name": "Thiết kế bài giảng sinh động",
+            "description": "Sử dụng đồ dùng trực quan, học cụ, bài giảng số tương tác",
+            "target": 95,
+            "actual": 94,
+            "weight": 30
+          },
+          {
+            "id": "observation",
+            "name": "Đánh giá nhận xét định kỳ (TT 27)",
+            "description": "Đánh giá thường xuyên, nhận xét năng lực, phẩm chất học sinh trên học bạ điện tử",
+            "target": 100,
+            "actual": 95,
+            "weight": 40
+          }
+        ]
+      },
+      {
+        "id": "professionalism",
+        "name": "Hồ sơ & Chuyên môn Tiểu học",
+        "weight": 30,
+        "metrics": [
+          {
+            "id": "grading_time",
+            "name": "Hoàn thiện Sổ chủ nhiệm đúng hạn",
+            "description": "Cập nhật hồ sơ lớp chủ nhiệm, kế hoạch tuần đúng hạn",
+            "target": 100,
+            "actual": 95,
+            "weight": 40
+          },
+          {
+            "id": "training",
+            "name": "Tham gia bồi dưỡng Tổ Khối",
+            "description": "Tham gia sinh hoạt chuyên môn khối 5, hỗ trợ ôn thi chuyển cấp THCS",
+            "target": 90,
+            "actual": 90,
+            "weight": 30
+          },
+          {
+            "id": "test_design",
+            "name": "Vở sạch - Chữ đẹp & Rèn nếp",
+            "description": "Đánh giá sự giữ gìn sách vở và tiến bộ chữ viết của học sinh",
+            "target": 85,
+            "actual": 86,
+            "weight": 30
+          }
+        ]
+      },
+      {
+        "id": "activities",
+        "name": "Phong trào & Kết nối Phụ huynh",
+        "weight": 30,
+        "metrics": [
+          {
+            "id": "parent_feedback",
+            "name": "Liên lạc & Đồng thuận từ Phụ huynh",
+            "description": "Điểm phản hồi hài lòng từ phụ huynh qua nhóm lớp, họp cha mẹ học sinh",
+            "target": 90,
+            "actual": 92,
+            "weight": 40
+          },
+          {
+            "id": "extracurricular",
+            "name": "Sinh hoạt Sao & Ngoại khóa",
+            "description": "Tổ chức hoạt động trải nghiệm, sinh hoạt tập thể, nề nếp Đội viên",
+            "target": 80,
+            "actual": 82,
+            "weight": 30
+          },
+          {
+            "id": "student_progress",
+            "name": "Rèn nếp bán trú & tự phục vụ",
+            "description": "Mức độ tự lập của học sinh trong ăn uống, ngủ trưa và giữ vệ sinh",
+            "target": 85,
+            "actual": 88,
+            "weight": 30
+          }
+        ]
+      }
+    ],
+    "evaluations": [],
+    "groupRole": "Tổ trưởng",
+    "teachingRole": "Giáo viên chủ nhiệm",
+    "assignedClass": "Lớp 5B"
+  },
+  {
+    "id": "t4",
+    "name": "Phạm Thu Thảo",
+    "email": "thaopham.c1@school.edu.vn",
+    "subject": "Chủ nhiệm (Khối 2)",
+    "department": "Tổ Khối 2",
+    "avatarUrl": "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&auto=format&fit=crop&q=80",
+    "kpiPeriod": "Tháng 06/2026",
+    "academicYear": "2025-2026",
+    "overallScore": 72.3,
+    "status": "Trung bình",
+    "kpis": [
+      {
+        "id": "teaching",
+        "name": "Giảng dạy & Chăm sóc học sinh",
+        "weight": 40,
+        "metrics": [
+          {
+            "id": "attendance",
+            "name": "Tỉ lệ chuyên cần của học sinh",
+            "description": "Tỉ lệ học sinh tiểu học đi học đều đặn, chuyên cần",
+            "target": 98,
+            "actual": 94,
+            "weight": 30
+          },
+          {
+            "id": "lesson_plan",
+            "name": "Thiết kế bài giảng sinh động",
+            "description": "Sử dụng đồ dùng trực quan, học cụ, bài giảng số tương tác",
+            "target": 95,
+            "actual": 80,
+            "weight": 30
+          },
+          {
+            "id": "observation",
+            "name": "Đánh giá nhận xét định kỳ (TT 27)",
+            "description": "Đánh giá thường xuyên, nhận xét năng lực, phẩm chất học sinh trên học bạ điện tử",
+            "target": 100,
+            "actual": 85,
+            "weight": 40
+          }
+        ]
+      },
+      {
+        "id": "professionalism",
+        "name": "Hồ sơ & Chuyên môn Tiểu học",
+        "weight": 30,
+        "metrics": [
+          {
+            "id": "grading_time",
+            "name": "Hoàn thiện Sổ chủ nhiệm đúng hạn",
+            "description": "Cập nhật hồ sơ lớp chủ nhiệm, kế hoạch tuần đúng hạn",
+            "target": 100,
+            "actual": 80,
+            "weight": 40
+          },
+          {
+            "id": "training",
+            "name": "Tham gia bồi dưỡng Tổ Khối",
+            "description": "Tham gia sinh hoạt chuyên môn khối 2",
+            "target": 90,
+            "actual": 85,
+            "weight": 30
+          },
+          {
+            "id": "test_design",
+            "name": "Vở sạch - Chữ đẹp & Rèn nếp",
+            "description": "Đánh giá sự giữ gìn sách vở và tiến bộ chữ viết của học sinh",
+            "target": 85,
+            "actual": 78,
+            "weight": 30
+          }
+        ]
+      },
+      {
+        "id": "activities",
+        "name": "Phong trào & Kết nối Phụ huynh",
+        "weight": 30,
+        "metrics": [
+          {
+            "id": "parent_feedback",
+            "name": "Liên lạc & Đồng thuận từ Phụ huynh",
+            "description": "Điểm phản hồi hài lòng từ phụ huynh qua nhóm lớp, họp cha mẹ học sinh",
+            "target": 90,
+            "actual": 80,
+            "weight": 40
+          },
+          {
+            "id": "extracurricular",
+            "name": "Sinh hoạt Sao & Ngoại khóa",
+            "description": "Tổ chức hoạt động trải nghiệm, sinh hoạt tập thể, nề nếp Sao Nhi đồng",
+            "target": 80,
+            "actual": 70,
+            "weight": 30
+          },
+          {
+            "id": "student_progress",
+            "name": "Rèn nếp bán trú & tự phục vụ",
+            "description": "Mức độ tự lập của học sinh trong ăn uống, ngủ trưa và giữ vệ sinh",
+            "target": 85,
+            "actual": 75,
+            "weight": 30
+          }
+        ]
+      }
+    ],
+    "evaluations": [
+      {
+        "id": "e4_1",
+        "period": "Tháng 05/2026",
+        "overallScore": 69.5,
+        "status": "Trung bình",
+        "evaluator": "Hiệu trưởng Lê Thị Thanh",
+        "evaluatedAt": "2026-05-31",
+        "feedback": "Cô Thảo cần đầu tư hơn vào thiết kế bài giảng sinh động, thu hút học sinh tiểu học. Công tác chấm nhận xét học bạ định kỳ còn một vài chỗ bị chậm so với quy định tổ khối."
+      }
+    ],
+    "groupRole": "Thành viên",
+    "teachingRole": "Giáo viên chủ nhiệm",
+    "assignedClass": "Lớp 2C"
+  },
+  {
+    "id": "t5",
+    "name": "Đỗ Bảo Vy",
+    "email": "vydo.c1@school.edu.vn",
+    "subject": "Tiếng Anh",
+    "department": "Tổ Bộ môn",
+    "avatarUrl": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
+    "kpiPeriod": "Tháng 06/2026",
+    "academicYear": "2025-2026",
+    "overallScore": 58.1,
+    "status": "Yếu",
+    "kpis": [
+      {
+        "id": "teaching",
+        "name": "Giảng dạy & Chăm sóc học sinh",
+        "weight": 40,
+        "metrics": [
+          {
+            "id": "attendance",
+            "name": "Tỉ lệ chuyên cần của học sinh",
+            "description": "Tỉ lệ học sinh tiểu học đi học đều đặn, chuyên cần",
+            "target": 98,
+            "actual": 80,
+            "weight": 30
+          },
+          {
+            "id": "lesson_plan",
+            "name": "Thiết kế bài giảng sinh động",
+            "description": "Sử dụng đồ dùng trực quan, học cụ, bài giảng số tương tác",
+            "target": 95,
+            "actual": 70,
+            "weight": 30
+          },
+          {
+            "id": "observation",
+            "name": "Đánh giá nhận xét định kỳ (TT 27)",
+            "description": "Đánh giá thường xuyên, nhận xét năng lực, phẩm chất học sinh trên học bạ điện tử",
+            "target": 100,
+            "actual": 65,
+            "weight": 40
+          }
+        ]
+      },
+      {
+        "id": "professionalism",
+        "name": "Hồ sơ & Chuyên môn Tiểu học",
+        "weight": 30,
+        "metrics": [
+          {
+            "id": "grading_time",
+            "name": "Hoàn thiện Sổ chủ nhiệm đúng hạn",
+            "description": "Cập nhật sổ bộ môn và nhật ký giảng dạy",
+            "target": 100,
+            "actual": 60,
+            "weight": 40
+          },
+          {
+            "id": "training",
+            "name": "Tham gia bồi dưỡng Tổ Khối",
+            "description": "Tham gia sinh hoạt chuyên môn khối bộ môn tiếng Anh",
+            "target": 90,
+            "actual": 70,
+            "weight": 30
+          },
+          {
+            "id": "test_design",
+            "name": "Vở sạch - Chữ đẹp & Rèn nếp",
+            "description": "Giữ thói quen giữ gìn tập vở viết tiếng Anh cho học sinh",
+            "target": 85,
+            "actual": 60,
+            "weight": 30
+          }
+        ]
+      },
+      {
+        "id": "activities",
+        "name": "Phong trào & Kết nối Phụ huynh",
+        "weight": 30,
+        "metrics": [
+          {
+            "id": "parent_feedback",
+            "name": "Liên lạc & Đồng thuận từ Phụ huynh",
+            "description": "Điểm phản hồi hài lòng từ phụ huynh qua nhóm lớp, họp cha mẹ học sinh",
+            "target": 90,
+            "actual": 65,
+            "weight": 40
+          },
+          {
+            "id": "extracurricular",
+            "name": "Sinh hoạt Sao & Ngoại khóa",
+            "description": "Hỗ trợ CLB Tiếng Anh và ngày hội ngôn ngữ",
+            "target": 80,
+            "actual": 55,
+            "weight": 30
+          },
+          {
+            "id": "student_progress",
+            "name": "Rèn nếp bán trú & tự phục vụ",
+            "description": "Quản nề nếp xếp hàng lên lớp của học sinh",
+            "target": 85,
+            "actual": 60,
+            "weight": 30
+          }
+        ]
+      }
+    ],
+    "evaluations": [],
+    "groupRole": "Thành viên",
+    "teachingRole": "Giáo viên bộ môn",
+    "assignedClass": "Khối 4, 5"
+  },
+  {
+    "id": "t_1783392817839",
+    "name": "Tô Văn Sị",
+    "email": "gv.tovansi.4877@school.edu.vn",
+    "subject": "Chủ nhiệm (Khối 1)",
+    "department": "Tổ Khối 1",
+    "groupRole": "Tổ phó",
+    "teachingRole": "Giáo viên chủ nhiệm",
+    "assignedClass": "lop 1a2",
+    "avatarUrl": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&auto=format&fit=crop&q=80",
+    "kpiPeriod": "Tháng 09/2025",
+    "academicYear": "2025-2026",
+    "overallScore": 80,
+    "status": "Khá",
+    "kpis": [
+      {
+        "id": "teaching",
+        "name": "Giảng dạy & Chăm sóc học sinh",
+        "weight": 40,
+        "metrics": [
+          {
+            "id": "attendance",
+            "name": "Tỉ lệ chuyên cần của học sinh",
+            "description": "Tỉ lệ học sinh tiểu học đi học đều đặn, chuyên cần",
+            "target": 98,
+            "weight": 30,
+            "actual": 80
+          },
+          {
+            "id": "lesson_plan",
+            "name": "Thiết kế bài giảng sinh động",
+            "description": "Sử dụng đồ dùng trực quan, học cụ, bài giảng số tương tác",
+            "target": 95,
+            "weight": 30,
+            "actual": 80
+          },
+          {
+            "id": "observation",
+            "name": "Đánh giá nhận xét định kỳ (TT 27)",
+            "description": "Đánh giá thường xuyên, nhận xét năng lực, phẩm chất học sinh trên học bạ điện tử",
+            "target": 100,
+            "weight": 40,
+            "actual": 80
+          }
+        ]
+      },
+      {
+        "id": "professionalism",
+        "name": "Hồ sơ & Chuyên môn Tiểu học",
+        "weight": 30,
+        "metrics": [
+          {
+            "id": "grading_time",
+            "name": "Hoàn thiện Sổ chủ nhiệm đúng hạn",
+            "description": "Cập nhật hồ sơ lớp chủ nhiệm, kế hoạch tuần đúng hạn",
+            "target": 100,
+            "weight": 40,
+            "actual": 80
+          },
+          {
+            "id": "training",
+            "name": "Tham gia bồi dưỡng Tổ Khối",
+            "description": "Tham gia sinh hoạt chuyên môn, tập huấn đổi mới phương pháp giảng dạy",
+            "target": 90,
+            "weight": 30,
+            "actual": 80
+          },
+          {
+            "id": "test_design",
+            "name": "Vở sạch - Chữ đẹp & Rèn nếp",
+            "description": "Đánh giá sự giữ gìn sách vở và tiến bộ chữ viết của học sinh",
+            "target": 85,
+            "weight": 30,
+            "actual": 80
+          }
+        ]
+      },
+      {
+        "id": "activities",
+        "name": "Phong trào & Kết nối Phụ huynh",
+        "weight": 30,
+        "metrics": [
+          {
+            "id": "parent_feedback",
+            "name": "Liên lạc & Đồng thuận từ Phụ huynh",
+            "description": "Điểm phản hồi hài lòng từ phụ huynh qua nhóm lớp, họp cha mẹ học sinh",
+            "target": 90,
+            "weight": 40,
+            "actual": 80
+          },
+          {
+            "id": "extracurricular",
+            "name": "Sinh hoạt Sao & Ngoại khóa",
+            "description": "Tổ chức hoạt động trải nghiệm, sinh hoạt tập thể, nề nếp Sao Nhi đồng",
+            "target": 80,
+            "weight": 30,
+            "actual": 80
+          },
+          {
+            "id": "student_progress",
+            "name": "Rèn nếp bán trú & tự phục vụ",
+            "description": "Mức độ tự lập của học sinh trong ăn uống, ngủ trưa và giữ vệ sinh",
+            "target": 85,
+            "weight": 30,
+            "actual": 80
+          }
+        ]
+      }
+    ],
+    "evaluations": [],
+    "password": "123456",
+    "periodKPIs": {
+      "Tháng 09/2025": {
+        "kpis": [
+          {
+            "id": "teaching",
+            "name": "Giảng dạy & Chăm sóc học sinh",
+            "weight": 40,
+            "metrics": [
+              {
+                "id": "attendance",
+                "name": "Tỉ lệ chuyên cần của học sinh",
+                "description": "Tỉ lệ học sinh tiểu học đi học đều đặn, chuyên cần",
+                "target": 98,
+                "weight": 30,
+                "actual": 80
+              },
+              {
+                "id": "lesson_plan",
+                "name": "Thiết kế bài giảng sinh động",
+                "description": "Sử dụng đồ dùng trực quan, học cụ, bài giảng số tương tác",
+                "target": 95,
+                "weight": 30,
+                "actual": 80
+              },
+              {
+                "id": "observation",
+                "name": "Đánh giá nhận xét định kỳ (TT 27)",
+                "description": "Đánh giá thường xuyên, nhận xét năng lực, phẩm chất học sinh trên học bạ điện tử",
+                "target": 100,
+                "weight": 40,
+                "actual": 80
+              }
+            ]
+          },
+          {
+            "id": "professionalism",
+            "name": "Hồ sơ & Chuyên môn Tiểu học",
+            "weight": 30,
+            "metrics": [
+              {
+                "id": "grading_time",
+                "name": "Hoàn thiện Sổ chủ nhiệm đúng hạn",
+                "description": "Cập nhật hồ sơ lớp chủ nhiệm, kế hoạch tuần đúng hạn",
+                "target": 100,
+                "weight": 40,
+                "actual": 80
+              },
+              {
+                "id": "training",
+                "name": "Tham gia bồi dưỡng Tổ Khối",
+                "description": "Tham gia sinh hoạt chuyên môn, tập huấn đổi mới phương pháp giảng dạy",
+                "target": 90,
+                "weight": 30,
+                "actual": 80
+              },
+              {
+                "id": "test_design",
+                "name": "Vở sạch - Chữ đẹp & Rèn nếp",
+                "description": "Đánh giá sự giữ gìn sách vở và tiến bộ chữ viết của học sinh",
+                "target": 85,
+                "weight": 30,
+                "actual": 80
+              }
+            ]
+          },
+          {
+            "id": "activities",
+            "name": "Phong trào & Kết nối Phụ huynh",
+            "weight": 30,
+            "metrics": [
+              {
+                "id": "parent_feedback",
+                "name": "Liên lạc & Đồng thuận từ Phụ huynh",
+                "description": "Điểm phản hồi hài lòng từ phụ huynh qua nhóm lớp, họp cha mẹ học sinh",
+                "target": 90,
+                "weight": 40,
+                "actual": 80
+              },
+              {
+                "id": "extracurricular",
+                "name": "Sinh hoạt Sao & Ngoại khóa",
+                "description": "Tổ chức hoạt động trải nghiệm, sinh hoạt tập thể, nề nếp Sao Nhi đồng",
+                "target": 80,
+                "weight": 30,
+                "actual": 80
+              },
+              {
+                "id": "student_progress",
+                "name": "Rèn nếp bán trú & tự phục vụ",
+                "description": "Mức độ tự lập của học sinh trong ăn uống, ngủ trưa và giữ vệ sinh",
+                "target": 85,
+                "weight": 30,
+                "actual": 80
+              }
+            ]
+          }
+        ],
+        "overallScore": 80,
+        "status": "Khá"
+      }
+    }
+  },
+  {
+    "id": "t_1783392817840",
+    "name": "Lữ Xông Lên",
+    "email": "gv.luxonglen.4624@school.edu.vn",
+    "subject": "Chưa phân công",
+    "department": "Chưa phân công",
+    "groupRole": "Thành viên",
+    "teachingRole": "Giáo viên chủ nhiệm",
+    "assignedClass": "Chưa phân lớp",
+    "avatarUrl": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&auto=format&fit=crop&q=80",
+    "kpiPeriod": "Tháng 09/2025",
+    "academicYear": "2025-2026",
+    "overallScore": 80,
+    "status": "Khá",
+    "kpis": [
+      {
+        "id": "teaching",
+        "name": "Giảng dạy & Chăm sóc học sinh",
+        "weight": 40,
+        "metrics": [
+          {
+            "id": "attendance",
+            "name": "Tỉ lệ chuyên cần của học sinh",
+            "description": "Tỉ lệ học sinh tiểu học đi học đều đặn, chuyên cần",
+            "target": 98,
+            "weight": 30,
+            "actual": 80
+          },
+          {
+            "id": "lesson_plan",
+            "name": "Thiết kế bài giảng sinh động",
+            "description": "Sử dụng đồ dùng trực quan, học cụ, bài giảng số tương tác",
+            "target": 95,
+            "weight": 30,
+            "actual": 80
+          },
+          {
+            "id": "observation",
+            "name": "Đánh giá nhận xét định kỳ (TT 27)",
+            "description": "Đánh giá thường xuyên, nhận xét năng lực, phẩm chất học sinh trên học bạ điện tử",
+            "target": 100,
+            "weight": 40,
+            "actual": 80
+          }
+        ]
+      },
+      {
+        "id": "professionalism",
+        "name": "Hồ sơ & Chuyên môn Tiểu học",
+        "weight": 30,
+        "metrics": [
+          {
+            "id": "grading_time",
+            "name": "Hoàn thiện Sổ chủ nhiệm đúng hạn",
+            "description": "Cập nhật hồ sơ lớp chủ nhiệm, kế hoạch tuần đúng hạn",
+            "target": 100,
+            "weight": 40,
+            "actual": 80
+          },
+          {
+            "id": "training",
+            "name": "Tham gia bồi dưỡng Tổ Khối",
+            "description": "Tham gia sinh hoạt chuyên môn, tập huấn đổi mới phương pháp giảng dạy",
+            "target": 90,
+            "weight": 30,
+            "actual": 80
+          },
+          {
+            "id": "test_design",
+            "name": "Vở sạch - Chữ đẹp & Rèn nếp",
+            "description": "Đánh giá sự giữ gìn sách vở và tiến bộ chữ viết của học sinh",
+            "target": 85,
+            "weight": 30,
+            "actual": 80
+          }
+        ]
+      },
+      {
+        "id": "activities",
+        "name": "Phong trào & Kết nối Phụ huynh",
+        "weight": 30,
+        "metrics": [
+          {
+            "id": "parent_feedback",
+            "name": "Liên lạc & Đồng thuận từ Phụ huynh",
+            "description": "Điểm phản hồi hài lòng từ phụ huynh qua nhóm lớp, họp cha mẹ học sinh",
+            "target": 90,
+            "weight": 40,
+            "actual": 80
+          },
+          {
+            "id": "extracurricular",
+            "name": "Sinh hoạt Sao & Ngoại khóa",
+            "description": "Tổ chức hoạt động trải nghiệm, sinh hoạt tập thể, nề nếp Sao Nhi đồng",
+            "target": 80,
+            "weight": 30,
+            "actual": 80
+          },
+          {
+            "id": "student_progress",
+            "name": "Rèn nếp bán trú & tự phục vụ",
+            "description": "Mức độ tự lập của học sinh trong ăn uống, ngủ trưa và giữ vệ sinh",
+            "target": 85,
+            "weight": 30,
+            "actual": 80
+          }
+        ]
+      }
+    ],
+    "evaluations": []
+  },
+  {
+    "id": "t_1783392817842",
+    "name": "Hà Thị Thúy",
+    "email": "gv.hathithuy.2495@school.edu.vn",
+    "subject": "Chưa phân công",
+    "department": "Chưa phân công",
+    "groupRole": "Thành viên",
+    "teachingRole": "Giáo viên chủ nhiệm",
+    "assignedClass": "Chưa phân lớp",
+    "avatarUrl": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&auto=format&fit=crop&q=80",
+    "kpiPeriod": "Tháng 09/2025",
+    "academicYear": "2025-2026",
+    "overallScore": 80,
+    "status": "Khá",
+    "kpis": [
+      {
+        "id": "teaching",
+        "name": "Giảng dạy & Chăm sóc học sinh",
+        "weight": 40,
+        "metrics": [
+          {
+            "id": "attendance",
+            "name": "Tỉ lệ chuyên cần của học sinh",
+            "description": "Tỉ lệ học sinh tiểu học đi học đều đặn, chuyên cần",
+            "target": 98,
+            "weight": 30,
+            "actual": 80
+          },
+          {
+            "id": "lesson_plan",
+            "name": "Thiết kế bài giảng sinh động",
+            "description": "Sử dụng đồ dùng trực quan, học cụ, bài giảng số tương tác",
+            "target": 95,
+            "weight": 30,
+            "actual": 80
+          },
+          {
+            "id": "observation",
+            "name": "Đánh giá nhận xét định kỳ (TT 27)",
+            "description": "Đánh giá thường xuyên, nhận xét năng lực, phẩm chất học sinh trên học bạ điện tử",
+            "target": 100,
+            "weight": 40,
+            "actual": 80
+          }
+        ]
+      },
+      {
+        "id": "professionalism",
+        "name": "Hồ sơ & Chuyên môn Tiểu học",
+        "weight": 30,
+        "metrics": [
+          {
+            "id": "grading_time",
+            "name": "Hoàn thiện Sổ chủ nhiệm đúng hạn",
+            "description": "Cập nhật hồ sơ lớp chủ nhiệm, kế hoạch tuần đúng hạn",
+            "target": 100,
+            "weight": 40,
+            "actual": 80
+          },
+          {
+            "id": "training",
+            "name": "Tham gia bồi dưỡng Tổ Khối",
+            "description": "Tham gia sinh hoạt chuyên môn, tập huấn đổi mới phương pháp giảng dạy",
+            "target": 90,
+            "weight": 30,
+            "actual": 80
+          },
+          {
+            "id": "test_design",
+            "name": "Vở sạch - Chữ đẹp & Rèn nếp",
+            "description": "Đánh giá sự giữ gìn sách vở và tiến bộ chữ viết của học sinh",
+            "target": 85,
+            "weight": 30,
+            "actual": 80
+          }
+        ]
+      },
+      {
+        "id": "activities",
+        "name": "Phong trào & Kết nối Phụ huynh",
+        "weight": 30,
+        "metrics": [
+          {
+            "id": "parent_feedback",
+            "name": "Liên lạc & Đồng thuận từ Phụ huynh",
+            "description": "Điểm phản hồi hài lòng từ phụ huynh qua nhóm lớp, họp cha mẹ học sinh",
+            "target": 90,
+            "weight": 40,
+            "actual": 80
+          },
+          {
+            "id": "extracurricular",
+            "name": "Sinh hoạt Sao & Ngoại khóa",
+            "description": "Tổ chức hoạt động trải nghiệm, sinh hoạt tập thể, nề nếp Sao Nhi đồng",
+            "target": 80,
+            "weight": 30,
+            "actual": 80
+          },
+          {
+            "id": "student_progress",
+            "name": "Rèn nếp bán trú & tự phục vụ",
+            "description": "Mức độ tự lập của học sinh trong ăn uống, ngủ trưa và giữ vệ sinh",
+            "target": 85,
+            "weight": 30,
+            "actual": 80
+          }
+        ]
+      }
+    ],
+    "evaluations": []
+  },
+  {
+    "id": "t_1783392817843",
+    "name": "Ngô Thị Giang",
+    "email": "gv.ngothigiang.9047@school.edu.vn",
+    "subject": "Chưa phân công",
+    "department": "Chưa phân công",
+    "groupRole": "Thành viên",
+    "teachingRole": "Giáo viên chủ nhiệm",
+    "assignedClass": "Chưa phân lớp",
+    "avatarUrl": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&auto=format&fit=crop&q=80",
+    "kpiPeriod": "Tháng 09/2025",
+    "academicYear": "2025-2026",
+    "overallScore": 80,
+    "status": "Khá",
+    "kpis": [
+      {
+        "id": "teaching",
+        "name": "Giảng dạy & Chăm sóc học sinh",
+        "weight": 40,
+        "metrics": [
+          {
+            "id": "attendance",
+            "name": "Tỉ lệ chuyên cần của học sinh",
+            "description": "Tỉ lệ học sinh tiểu học đi học đều đặn, chuyên cần",
+            "target": 98,
+            "weight": 30,
+            "actual": 80
+          },
+          {
+            "id": "lesson_plan",
+            "name": "Thiết kế bài giảng sinh động",
+            "description": "Sử dụng đồ dùng trực quan, học cụ, bài giảng số tương tác",
+            "target": 95,
+            "weight": 30,
+            "actual": 80
+          },
+          {
+            "id": "observation",
+            "name": "Đánh giá nhận xét định kỳ (TT 27)",
+            "description": "Đánh giá thường xuyên, nhận xét năng lực, phẩm chất học sinh trên học bạ điện tử",
+            "target": 100,
+            "weight": 40,
+            "actual": 80
+          }
+        ]
+      },
+      {
+        "id": "professionalism",
+        "name": "Hồ sơ & Chuyên môn Tiểu học",
+        "weight": 30,
+        "metrics": [
+          {
+            "id": "grading_time",
+            "name": "Hoàn thiện Sổ chủ nhiệm đúng hạn",
+            "description": "Cập nhật hồ sơ lớp chủ nhiệm, kế hoạch tuần đúng hạn",
+            "target": 100,
+            "weight": 40,
+            "actual": 80
+          },
+          {
+            "id": "training",
+            "name": "Tham gia bồi dưỡng Tổ Khối",
+            "description": "Tham gia sinh hoạt chuyên môn, tập huấn đổi mới phương pháp giảng dạy",
+            "target": 90,
+            "weight": 30,
+            "actual": 80
+          },
+          {
+            "id": "test_design",
+            "name": "Vở sạch - Chữ đẹp & Rèn nếp",
+            "description": "Đánh giá sự giữ gìn sách vở và tiến bộ chữ viết của học sinh",
+            "target": 85,
+            "weight": 30,
+            "actual": 80
+          }
+        ]
+      },
+      {
+        "id": "activities",
+        "name": "Phong trào & Kết nối Phụ huynh",
+        "weight": 30,
+        "metrics": [
+          {
+            "id": "parent_feedback",
+            "name": "Liên lạc & Đồng thuận từ Phụ huynh",
+            "description": "Điểm phản hồi hài lòng từ phụ huynh qua nhóm lớp, họp cha mẹ học sinh",
+            "target": 90,
+            "weight": 40,
+            "actual": 80
+          },
+          {
+            "id": "extracurricular",
+            "name": "Sinh hoạt Sao & Ngoại khóa",
+            "description": "Tổ chức hoạt động trải nghiệm, sinh hoạt tập thể, nề nếp Sao Nhi đồng",
+            "target": 80,
+            "weight": 30,
+            "actual": 80
+          },
+          {
+            "id": "student_progress",
+            "name": "Rèn nếp bán trú & tự phục vụ",
+            "description": "Mức độ tự lập của học sinh trong ăn uống, ngủ trưa và giữ vệ sinh",
+            "target": 85,
+            "weight": 30,
+            "actual": 80
+          }
+        ]
+      }
+    ],
+    "evaluations": []
+  },
+  {
+    "id": "t_1783392817844",
+    "name": "Quách Hữu Quý",
+    "email": "gv.quachhuuquy.6126@school.edu.vn",
+    "subject": "Chưa phân công",
+    "department": "Chưa phân công",
+    "groupRole": "Thành viên",
+    "teachingRole": "Giáo viên chủ nhiệm",
+    "assignedClass": "Chưa phân lớp",
+    "avatarUrl": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&auto=format&fit=crop&q=80",
+    "kpiPeriod": "Tháng 09/2025",
+    "academicYear": "2025-2026",
+    "overallScore": 80,
+    "status": "Khá",
+    "kpis": [
+      {
+        "id": "teaching",
+        "name": "Giảng dạy & Chăm sóc học sinh",
+        "weight": 40,
+        "metrics": [
+          {
+            "id": "attendance",
+            "name": "Tỉ lệ chuyên cần của học sinh",
+            "description": "Tỉ lệ học sinh tiểu học đi học đều đặn, chuyên cần",
+            "target": 98,
+            "weight": 30,
+            "actual": 80
+          },
+          {
+            "id": "lesson_plan",
+            "name": "Thiết kế bài giảng sinh động",
+            "description": "Sử dụng đồ dùng trực quan, học cụ, bài giảng số tương tác",
+            "target": 95,
+            "weight": 30,
+            "actual": 80
+          },
+          {
+            "id": "observation",
+            "name": "Đánh giá nhận xét định kỳ (TT 27)",
+            "description": "Đánh giá thường xuyên, nhận xét năng lực, phẩm chất học sinh trên học bạ điện tử",
+            "target": 100,
+            "weight": 40,
+            "actual": 80
+          }
+        ]
+      },
+      {
+        "id": "professionalism",
+        "name": "Hồ sơ & Chuyên môn Tiểu học",
+        "weight": 30,
+        "metrics": [
+          {
+            "id": "grading_time",
+            "name": "Hoàn thiện Sổ chủ nhiệm đúng hạn",
+            "description": "Cập nhật hồ sơ lớp chủ nhiệm, kế hoạch tuần đúng hạn",
+            "target": 100,
+            "weight": 40,
+            "actual": 80
+          },
+          {
+            "id": "training",
+            "name": "Tham gia bồi dưỡng Tổ Khối",
+            "description": "Tham gia sinh hoạt chuyên môn, tập huấn đổi mới phương pháp giảng dạy",
+            "target": 90,
+            "weight": 30,
+            "actual": 80
+          },
+          {
+            "id": "test_design",
+            "name": "Vở sạch - Chữ đẹp & Rèn nếp",
+            "description": "Đánh giá sự giữ gìn sách vở và tiến bộ chữ viết của học sinh",
+            "target": 85,
+            "weight": 30,
+            "actual": 80
+          }
+        ]
+      },
+      {
+        "id": "activities",
+        "name": "Phong trào & Kết nối Phụ huynh",
+        "weight": 30,
+        "metrics": [
+          {
+            "id": "parent_feedback",
+            "name": "Liên lạc & Đồng thuận từ Phụ huynh",
+            "description": "Điểm phản hồi hài lòng từ phụ huynh qua nhóm lớp, họp cha mẹ học sinh",
+            "target": 90,
+            "weight": 40,
+            "actual": 80
+          },
+          {
+            "id": "extracurricular",
+            "name": "Sinh hoạt Sao & Ngoại khóa",
+            "description": "Tổ chức hoạt động trải nghiệm, sinh hoạt tập thể, nề nếp Sao Nhi đồng",
+            "target": 80,
+            "weight": 30,
+            "actual": 80
+          },
+          {
+            "id": "student_progress",
+            "name": "Rèn nếp bán trú & tự phục vụ",
+            "description": "Mức độ tự lập của học sinh trong ăn uống, ngủ trưa và giữ vệ sinh",
+            "target": 85,
+            "weight": 30,
+            "actual": 80
+          }
+        ]
+      }
+    ],
+    "evaluations": []
+  },
+  {
+    "id": "t_1783392817845",
+    "name": "Dương T Phương Lan",
+    "email": "gv.duongtphuonglan.2763@school.edu.vn",
+    "subject": "Chưa phân công",
+    "department": "Chưa phân công",
+    "groupRole": "Thành viên",
+    "teachingRole": "Giáo viên chủ nhiệm",
+    "assignedClass": "Chưa phân lớp",
+    "avatarUrl": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&auto=format&fit=crop&q=80",
+    "kpiPeriod": "Tháng 09/2025",
+    "academicYear": "2025-2026",
+    "overallScore": 80,
+    "status": "Khá",
+    "kpis": [
+      {
+        "id": "teaching",
+        "name": "Giảng dạy & Chăm sóc học sinh",
+        "weight": 40,
+        "metrics": [
+          {
+            "id": "attendance",
+            "name": "Tỉ lệ chuyên cần của học sinh",
+            "description": "Tỉ lệ học sinh tiểu học đi học đều đặn, chuyên cần",
+            "target": 98,
+            "weight": 30,
+            "actual": 80
+          },
+          {
+            "id": "lesson_plan",
+            "name": "Thiết kế bài giảng sinh động",
+            "description": "Sử dụng đồ dùng trực quan, học cụ, bài giảng số tương tác",
+            "target": 95,
+            "weight": 30,
+            "actual": 80
+          },
+          {
+            "id": "observation",
+            "name": "Đánh giá nhận xét định kỳ (TT 27)",
+            "description": "Đánh giá thường xuyên, nhận xét năng lực, phẩm chất học sinh trên học bạ điện tử",
+            "target": 100,
+            "weight": 40,
+            "actual": 80
+          }
+        ]
+      },
+      {
+        "id": "professionalism",
+        "name": "Hồ sơ & Chuyên môn Tiểu học",
+        "weight": 30,
+        "metrics": [
+          {
+            "id": "grading_time",
+            "name": "Hoàn thiện Sổ chủ nhiệm đúng hạn",
+            "description": "Cập nhật hồ sơ lớp chủ nhiệm, kế hoạch tuần đúng hạn",
+            "target": 100,
+            "weight": 40,
+            "actual": 80
+          },
+          {
+            "id": "training",
+            "name": "Tham gia bồi dưỡng Tổ Khối",
+            "description": "Tham gia sinh hoạt chuyên môn, tập huấn đổi mới phương pháp giảng dạy",
+            "target": 90,
+            "weight": 30,
+            "actual": 80
+          },
+          {
+            "id": "test_design",
+            "name": "Vở sạch - Chữ đẹp & Rèn nếp",
+            "description": "Đánh giá sự giữ gìn sách vở và tiến bộ chữ viết của học sinh",
+            "target": 85,
+            "weight": 30,
+            "actual": 80
+          }
+        ]
+      },
+      {
+        "id": "activities",
+        "name": "Phong trào & Kết nối Phụ huynh",
+        "weight": 30,
+        "metrics": [
+          {
+            "id": "parent_feedback",
+            "name": "Liên lạc & Đồng thuận từ Phụ huynh",
+            "description": "Điểm phản hồi hài lòng từ phụ huynh qua nhóm lớp, họp cha mẹ học sinh",
+            "target": 90,
+            "weight": 40,
+            "actual": 80
+          },
+          {
+            "id": "extracurricular",
+            "name": "Sinh hoạt Sao & Ngoại khóa",
+            "description": "Tổ chức hoạt động trải nghiệm, sinh hoạt tập thể, nề nếp Sao Nhi đồng",
+            "target": 80,
+            "weight": 30,
+            "actual": 80
+          },
+          {
+            "id": "student_progress",
+            "name": "Rèn nếp bán trú & tự phục vụ",
+            "description": "Mức độ tự lập của học sinh trong ăn uống, ngủ trưa và giữ vệ sinh",
+            "target": 85,
+            "weight": 30,
+            "actual": 80
+          }
+        ]
+      }
+    ],
+    "evaluations": []
+  },
+  {
+    "id": "t_1783392817846",
+    "name": "Huỳnh Công Chánh",
+    "email": "gv.huynhcongchanh.1490@school.edu.vn",
+    "subject": "Chưa phân công",
+    "department": "Chưa phân công",
+    "groupRole": "Thành viên",
+    "teachingRole": "Giáo viên chủ nhiệm",
+    "assignedClass": "Chưa phân lớp",
+    "avatarUrl": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&auto=format&fit=crop&q=80",
+    "kpiPeriod": "Tháng 09/2025",
+    "academicYear": "2025-2026",
+    "overallScore": 80,
+    "status": "Khá",
+    "kpis": [
+      {
+        "id": "teaching",
+        "name": "Giảng dạy & Chăm sóc học sinh",
+        "weight": 40,
+        "metrics": [
+          {
+            "id": "attendance",
+            "name": "Tỉ lệ chuyên cần của học sinh",
+            "description": "Tỉ lệ học sinh tiểu học đi học đều đặn, chuyên cần",
+            "target": 98,
+            "weight": 30,
+            "actual": 80
+          },
+          {
+            "id": "lesson_plan",
+            "name": "Thiết kế bài giảng sinh động",
+            "description": "Sử dụng đồ dùng trực quan, học cụ, bài giảng số tương tác",
+            "target": 95,
+            "weight": 30,
+            "actual": 80
+          },
+          {
+            "id": "observation",
+            "name": "Đánh giá nhận xét định kỳ (TT 27)",
+            "description": "Đánh giá thường xuyên, nhận xét năng lực, phẩm chất học sinh trên học bạ điện tử",
+            "target": 100,
+            "weight": 40,
+            "actual": 80
+          }
+        ]
+      },
+      {
+        "id": "professionalism",
+        "name": "Hồ sơ & Chuyên môn Tiểu học",
+        "weight": 30,
+        "metrics": [
+          {
+            "id": "grading_time",
+            "name": "Hoàn thiện Sổ chủ nhiệm đúng hạn",
+            "description": "Cập nhật hồ sơ lớp chủ nhiệm, kế hoạch tuần đúng hạn",
+            "target": 100,
+            "weight": 40,
+            "actual": 80
+          },
+          {
+            "id": "training",
+            "name": "Tham gia bồi dưỡng Tổ Khối",
+            "description": "Tham gia sinh hoạt chuyên môn, tập huấn đổi mới phương pháp giảng dạy",
+            "target": 90,
+            "weight": 30,
+            "actual": 80
+          },
+          {
+            "id": "test_design",
+            "name": "Vở sạch - Chữ đẹp & Rèn nếp",
+            "description": "Đánh giá sự giữ gìn sách vở và tiến bộ chữ viết của học sinh",
+            "target": 85,
+            "weight": 30,
+            "actual": 80
+          }
+        ]
+      },
+      {
+        "id": "activities",
+        "name": "Phong trào & Kết nối Phụ huynh",
+        "weight": 30,
+        "metrics": [
+          {
+            "id": "parent_feedback",
+            "name": "Liên lạc & Đồng thuận từ Phụ huynh",
+            "description": "Điểm phản hồi hài lòng từ phụ huynh qua nhóm lớp, họp cha mẹ học sinh",
+            "target": 90,
+            "weight": 40,
+            "actual": 80
+          },
+          {
+            "id": "extracurricular",
+            "name": "Sinh hoạt Sao & Ngoại khóa",
+            "description": "Tổ chức hoạt động trải nghiệm, sinh hoạt tập thể, nề nếp Sao Nhi đồng",
+            "target": 80,
+            "weight": 30,
+            "actual": 80
+          },
+          {
+            "id": "student_progress",
+            "name": "Rèn nếp bán trú & tự phục vụ",
+            "description": "Mức độ tự lập của học sinh trong ăn uống, ngủ trưa và giữ vệ sinh",
+            "target": 85,
+            "weight": 30,
+            "actual": 80
+          }
+        ]
+      }
+    ],
+    "evaluations": []
+  },
+  {
+    "id": "t_1783392817847",
+    "name": "Lê Thị Oanh",
+    "email": "gv.lethioanh.6562@school.edu.vn",
+    "subject": "Chưa phân công",
+    "department": "Chưa phân công",
+    "groupRole": "Thành viên",
+    "teachingRole": "Giáo viên chủ nhiệm",
+    "assignedClass": "Chưa phân lớp",
+    "avatarUrl": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&auto=format&fit=crop&q=80",
+    "kpiPeriod": "Tháng 09/2025",
+    "academicYear": "2025-2026",
+    "overallScore": 80,
+    "status": "Khá",
+    "kpis": [
+      {
+        "id": "teaching",
+        "name": "Giảng dạy & Chăm sóc học sinh",
+        "weight": 40,
+        "metrics": [
+          {
+            "id": "attendance",
+            "name": "Tỉ lệ chuyên cần của học sinh",
+            "description": "Tỉ lệ học sinh tiểu học đi học đều đặn, chuyên cần",
+            "target": 98,
+            "weight": 30,
+            "actual": 80
+          },
+          {
+            "id": "lesson_plan",
+            "name": "Thiết kế bài giảng sinh động",
+            "description": "Sử dụng đồ dùng trực quan, học cụ, bài giảng số tương tác",
+            "target": 95,
+            "weight": 30,
+            "actual": 80
+          },
+          {
+            "id": "observation",
+            "name": "Đánh giá nhận xét định kỳ (TT 27)",
+            "description": "Đánh giá thường xuyên, nhận xét năng lực, phẩm chất học sinh trên học bạ điện tử",
+            "target": 100,
+            "weight": 40,
+            "actual": 80
+          }
+        ]
+      },
+      {
+        "id": "professionalism",
+        "name": "Hồ sơ & Chuyên môn Tiểu học",
+        "weight": 30,
+        "metrics": [
+          {
+            "id": "grading_time",
+            "name": "Hoàn thiện Sổ chủ nhiệm đúng hạn",
+            "description": "Cập nhật hồ sơ lớp chủ nhiệm, kế hoạch tuần đúng hạn",
+            "target": 100,
+            "weight": 40,
+            "actual": 80
+          },
+          {
+            "id": "training",
+            "name": "Tham gia bồi dưỡng Tổ Khối",
+            "description": "Tham gia sinh hoạt chuyên môn, tập huấn đổi mới phương pháp giảng dạy",
+            "target": 90,
+            "weight": 30,
+            "actual": 80
+          },
+          {
+            "id": "test_design",
+            "name": "Vở sạch - Chữ đẹp & Rèn nếp",
+            "description": "Đánh giá sự giữ gìn sách vở và tiến bộ chữ viết của học sinh",
+            "target": 85,
+            "weight": 30,
+            "actual": 80
+          }
+        ]
+      },
+      {
+        "id": "activities",
+        "name": "Phong trào & Kết nối Phụ huynh",
+        "weight": 30,
+        "metrics": [
+          {
+            "id": "parent_feedback",
+            "name": "Liên lạc & Đồng thuận từ Phụ huynh",
+            "description": "Điểm phản hồi hài lòng từ phụ huynh qua nhóm lớp, họp cha mẹ học sinh",
+            "target": 90,
+            "weight": 40,
+            "actual": 80
+          },
+          {
+            "id": "extracurricular",
+            "name": "Sinh hoạt Sao & Ngoại khóa",
+            "description": "Tổ chức hoạt động trải nghiệm, sinh hoạt tập thể, nề nếp Sao Nhi đồng",
+            "target": 80,
+            "weight": 30,
+            "actual": 80
+          },
+          {
+            "id": "student_progress",
+            "name": "Rèn nếp bán trú & tự phục vụ",
+            "description": "Mức độ tự lập của học sinh trong ăn uống, ngủ trưa và giữ vệ sinh",
+            "target": 85,
+            "weight": 30,
+            "actual": 80
+          }
+        ]
+      }
+    ],
+    "evaluations": []
+  },
+  {
+    "id": "t_1783392817848",
+    "name": "Nguyễn T Thu Hương",
+    "email": "gv.nguyentthuhuong.9334@school.edu.vn",
+    "subject": "Chưa phân công",
+    "department": "Chưa phân công",
+    "groupRole": "Thành viên",
+    "teachingRole": "Giáo viên chủ nhiệm",
+    "assignedClass": "Chưa phân lớp",
+    "avatarUrl": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&auto=format&fit=crop&q=80",
+    "kpiPeriod": "Tháng 09/2025",
+    "academicYear": "2025-2026",
+    "overallScore": 80,
+    "status": "Khá",
+    "kpis": [
+      {
+        "id": "teaching",
+        "name": "Giảng dạy & Chăm sóc học sinh",
+        "weight": 40,
+        "metrics": [
+          {
+            "id": "attendance",
+            "name": "Tỉ lệ chuyên cần của học sinh",
+            "description": "Tỉ lệ học sinh tiểu học đi học đều đặn, chuyên cần",
+            "target": 98,
+            "weight": 30,
+            "actual": 80
+          },
+          {
+            "id": "lesson_plan",
+            "name": "Thiết kế bài giảng sinh động",
+            "description": "Sử dụng đồ dùng trực quan, học cụ, bài giảng số tương tác",
+            "target": 95,
+            "weight": 30,
+            "actual": 80
+          },
+          {
+            "id": "observation",
+            "name": "Đánh giá nhận xét định kỳ (TT 27)",
+            "description": "Đánh giá thường xuyên, nhận xét năng lực, phẩm chất học sinh trên học bạ điện tử",
+            "target": 100,
+            "weight": 40,
+            "actual": 80
+          }
+        ]
+      },
+      {
+        "id": "professionalism",
+        "name": "Hồ sơ & Chuyên môn Tiểu học",
+        "weight": 30,
+        "metrics": [
+          {
+            "id": "grading_time",
+            "name": "Hoàn thiện Sổ chủ nhiệm đúng hạn",
+            "description": "Cập nhật hồ sơ lớp chủ nhiệm, kế hoạch tuần đúng hạn",
+            "target": 100,
+            "weight": 40,
+            "actual": 80
+          },
+          {
+            "id": "training",
+            "name": "Tham gia bồi dưỡng Tổ Khối",
+            "description": "Tham gia sinh hoạt chuyên môn, tập huấn đổi mới phương pháp giảng dạy",
+            "target": 90,
+            "weight": 30,
+            "actual": 80
+          },
+          {
+            "id": "test_design",
+            "name": "Vở sạch - Chữ đẹp & Rèn nếp",
+            "description": "Đánh giá sự giữ gìn sách vở và tiến bộ chữ viết của học sinh",
+            "target": 85,
+            "weight": 30,
+            "actual": 80
+          }
+        ]
+      },
+      {
+        "id": "activities",
+        "name": "Phong trào & Kết nối Phụ huynh",
+        "weight": 30,
+        "metrics": [
+          {
+            "id": "parent_feedback",
+            "name": "Liên lạc & Đồng thuận từ Phụ huynh",
+            "description": "Điểm phản hồi hài lòng từ phụ huynh qua nhóm lớp, họp cha mẹ học sinh",
+            "target": 90,
+            "weight": 40,
+            "actual": 80
+          },
+          {
+            "id": "extracurricular",
+            "name": "Sinh hoạt Sao & Ngoại khóa",
+            "description": "Tổ chức hoạt động trải nghiệm, sinh hoạt tập thể, nề nếp Sao Nhi đồng",
+            "target": 80,
+            "weight": 30,
+            "actual": 80
+          },
+          {
+            "id": "student_progress",
+            "name": "Rèn nếp bán trú & tự phục vụ",
+            "description": "Mức độ tự lập của học sinh trong ăn uống, ngủ trưa và giữ vệ sinh",
+            "target": 85,
+            "weight": 30,
+            "actual": 80
+          }
+        ]
+      }
+    ],
+    "evaluations": []
+  },
+  {
+    "id": "t_1783392817849",
+    "name": "Nguyễn Văn Khoẻ",
+    "email": "gv.nguyenvankhoe.8181@school.edu.vn",
+    "subject": "Chưa phân công",
+    "department": "Chưa phân công",
+    "groupRole": "Thành viên",
+    "teachingRole": "Giáo viên chủ nhiệm",
+    "assignedClass": "Chưa phân lớp",
+    "avatarUrl": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&auto=format&fit=crop&q=80",
+    "kpiPeriod": "Tháng 09/2025",
+    "academicYear": "2025-2026",
+    "overallScore": 80,
+    "status": "Khá",
+    "kpis": [
+      {
+        "id": "teaching",
+        "name": "Giảng dạy & Chăm sóc học sinh",
+        "weight": 40,
+        "metrics": [
+          {
+            "id": "attendance",
+            "name": "Tỉ lệ chuyên cần của học sinh",
+            "description": "Tỉ lệ học sinh tiểu học đi học đều đặn, chuyên cần",
+            "target": 98,
+            "weight": 30,
+            "actual": 80
+          },
+          {
+            "id": "lesson_plan",
+            "name": "Thiết kế bài giảng sinh động",
+            "description": "Sử dụng đồ dùng trực quan, học cụ, bài giảng số tương tác",
+            "target": 95,
+            "weight": 30,
+            "actual": 80
+          },
+          {
+            "id": "observation",
+            "name": "Đánh giá nhận xét định kỳ (TT 27)",
+            "description": "Đánh giá thường xuyên, nhận xét năng lực, phẩm chất học sinh trên học bạ điện tử",
+            "target": 100,
+            "weight": 40,
+            "actual": 80
+          }
+        ]
+      },
+      {
+        "id": "professionalism",
+        "name": "Hồ sơ & Chuyên môn Tiểu học",
+        "weight": 30,
+        "metrics": [
+          {
+            "id": "grading_time",
+            "name": "Hoàn thiện Sổ chủ nhiệm đúng hạn",
+            "description": "Cập nhật hồ sơ lớp chủ nhiệm, kế hoạch tuần đúng hạn",
+            "target": 100,
+            "weight": 40,
+            "actual": 80
+          },
+          {
+            "id": "training",
+            "name": "Tham gia bồi dưỡng Tổ Khối",
+            "description": "Tham gia sinh hoạt chuyên môn, tập huấn đổi mới phương pháp giảng dạy",
+            "target": 90,
+            "weight": 30,
+            "actual": 80
+          },
+          {
+            "id": "test_design",
+            "name": "Vở sạch - Chữ đẹp & Rèn nếp",
+            "description": "Đánh giá sự giữ gìn sách vở và tiến bộ chữ viết của học sinh",
+            "target": 85,
+            "weight": 30,
+            "actual": 80
+          }
+        ]
+      },
+      {
+        "id": "activities",
+        "name": "Phong trào & Kết nối Phụ huynh",
+        "weight": 30,
+        "metrics": [
+          {
+            "id": "parent_feedback",
+            "name": "Liên lạc & Đồng thuận từ Phụ huynh",
+            "description": "Điểm phản hồi hài lòng từ phụ huynh qua nhóm lớp, họp cha mẹ học sinh",
+            "target": 90,
+            "weight": 40,
+            "actual": 80
+          },
+          {
+            "id": "extracurricular",
+            "name": "Sinh hoạt Sao & Ngoại khóa",
+            "description": "Tổ chức hoạt động trải nghiệm, sinh hoạt tập thể, nề nếp Sao Nhi đồng",
+            "target": 80,
+            "weight": 30,
+            "actual": 80
+          },
+          {
+            "id": "student_progress",
+            "name": "Rèn nếp bán trú & tự phục vụ",
+            "description": "Mức độ tự lập của học sinh trong ăn uống, ngủ trưa và giữ vệ sinh",
+            "target": 85,
+            "weight": 30,
+            "actual": 80
+          }
+        ]
+      }
+    ],
+    "evaluations": []
+  },
+  {
+    "id": "t_1783392817850",
+    "name": "Nguyễn Văn Thông",
+    "email": "gv.nguyenvanthong.9850@school.edu.vn",
+    "subject": "Chưa phân công",
+    "department": "Chưa phân công",
+    "groupRole": "Thành viên",
+    "teachingRole": "Giáo viên chủ nhiệm",
+    "assignedClass": "Chưa phân lớp",
+    "avatarUrl": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&auto=format&fit=crop&q=80",
+    "kpiPeriod": "Tháng 09/2025",
+    "academicYear": "2025-2026",
+    "overallScore": 80,
+    "status": "Khá",
+    "kpis": [
+      {
+        "id": "teaching",
+        "name": "Giảng dạy & Chăm sóc học sinh",
+        "weight": 40,
+        "metrics": [
+          {
+            "id": "attendance",
+            "name": "Tỉ lệ chuyên cần của học sinh",
+            "description": "Tỉ lệ học sinh tiểu học đi học đều đặn, chuyên cần",
+            "target": 98,
+            "weight": 30,
+            "actual": 80
+          },
+          {
+            "id": "lesson_plan",
+            "name": "Thiết kế bài giảng sinh động",
+            "description": "Sử dụng đồ dùng trực quan, học cụ, bài giảng số tương tác",
+            "target": 95,
+            "weight": 30,
+            "actual": 80
+          },
+          {
+            "id": "observation",
+            "name": "Đánh giá nhận xét định kỳ (TT 27)",
+            "description": "Đánh giá thường xuyên, nhận xét năng lực, phẩm chất học sinh trên học bạ điện tử",
+            "target": 100,
+            "weight": 40,
+            "actual": 80
+          }
+        ]
+      },
+      {
+        "id": "professionalism",
+        "name": "Hồ sơ & Chuyên môn Tiểu học",
+        "weight": 30,
+        "metrics": [
+          {
+            "id": "grading_time",
+            "name": "Hoàn thiện Sổ chủ nhiệm đúng hạn",
+            "description": "Cập nhật hồ sơ lớp chủ nhiệm, kế hoạch tuần đúng hạn",
+            "target": 100,
+            "weight": 40,
+            "actual": 80
+          },
+          {
+            "id": "training",
+            "name": "Tham gia bồi dưỡng Tổ Khối",
+            "description": "Tham gia sinh hoạt chuyên môn, tập huấn đổi mới phương pháp giảng dạy",
+            "target": 90,
+            "weight": 30,
+            "actual": 80
+          },
+          {
+            "id": "test_design",
+            "name": "Vở sạch - Chữ đẹp & Rèn nếp",
+            "description": "Đánh giá sự giữ gìn sách vở và tiến bộ chữ viết của học sinh",
+            "target": 85,
+            "weight": 30,
+            "actual": 80
+          }
+        ]
+      },
+      {
+        "id": "activities",
+        "name": "Phong trào & Kết nối Phụ huynh",
+        "weight": 30,
+        "metrics": [
+          {
+            "id": "parent_feedback",
+            "name": "Liên lạc & Đồng thuận từ Phụ huynh",
+            "description": "Điểm phản hồi hài lòng từ phụ huynh qua nhóm lớp, họp cha mẹ học sinh",
+            "target": 90,
+            "weight": 40,
+            "actual": 80
+          },
+          {
+            "id": "extracurricular",
+            "name": "Sinh hoạt Sao & Ngoại khóa",
+            "description": "Tổ chức hoạt động trải nghiệm, sinh hoạt tập thể, nề nếp Sao Nhi đồng",
+            "target": 80,
+            "weight": 30,
+            "actual": 80
+          },
+          {
+            "id": "student_progress",
+            "name": "Rèn nếp bán trú & tự phục vụ",
+            "description": "Mức độ tự lập của học sinh trong ăn uống, ngủ trưa và giữ vệ sinh",
+            "target": 85,
+            "weight": 30,
+            "actual": 80
+          }
+        ]
+      }
+    ],
+    "evaluations": []
+  },
+  {
+    "id": "t_1783392817851",
+    "name": "Tô Việt Tân",
+    "email": "gv.toviettan.8346@school.edu.vn",
+    "subject": "Chưa phân công",
+    "department": "Chưa phân công",
+    "groupRole": "Thành viên",
+    "teachingRole": "Giáo viên chủ nhiệm",
+    "assignedClass": "Chưa phân lớp",
+    "avatarUrl": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&auto=format&fit=crop&q=80",
+    "kpiPeriod": "Tháng 09/2025",
+    "academicYear": "2025-2026",
+    "overallScore": 80,
+    "status": "Khá",
+    "kpis": [
+      {
+        "id": "teaching",
+        "name": "Giảng dạy & Chăm sóc học sinh",
+        "weight": 40,
+        "metrics": [
+          {
+            "id": "attendance",
+            "name": "Tỉ lệ chuyên cần của học sinh",
+            "description": "Tỉ lệ học sinh tiểu học đi học đều đặn, chuyên cần",
+            "target": 98,
+            "weight": 30,
+            "actual": 80
+          },
+          {
+            "id": "lesson_plan",
+            "name": "Thiết kế bài giảng sinh động",
+            "description": "Sử dụng đồ dùng trực quan, học cụ, bài giảng số tương tác",
+            "target": 95,
+            "weight": 30,
+            "actual": 80
+          },
+          {
+            "id": "observation",
+            "name": "Đánh giá nhận xét định kỳ (TT 27)",
+            "description": "Đánh giá thường xuyên, nhận xét năng lực, phẩm chất học sinh trên học bạ điện tử",
+            "target": 100,
+            "weight": 40,
+            "actual": 80
+          }
+        ]
+      },
+      {
+        "id": "professionalism",
+        "name": "Hồ sơ & Chuyên môn Tiểu học",
+        "weight": 30,
+        "metrics": [
+          {
+            "id": "grading_time",
+            "name": "Hoàn thiện Sổ chủ nhiệm đúng hạn",
+            "description": "Cập nhật hồ sơ lớp chủ nhiệm, kế hoạch tuần đúng hạn",
+            "target": 100,
+            "weight": 40,
+            "actual": 80
+          },
+          {
+            "id": "training",
+            "name": "Tham gia bồi dưỡng Tổ Khối",
+            "description": "Tham gia sinh hoạt chuyên môn, tập huấn đổi mới phương pháp giảng dạy",
+            "target": 90,
+            "weight": 30,
+            "actual": 80
+          },
+          {
+            "id": "test_design",
+            "name": "Vở sạch - Chữ đẹp & Rèn nếp",
+            "description": "Đánh giá sự giữ gìn sách vở và tiến bộ chữ viết của học sinh",
+            "target": 85,
+            "weight": 30,
+            "actual": 80
+          }
+        ]
+      },
+      {
+        "id": "activities",
+        "name": "Phong trào & Kết nối Phụ huynh",
+        "weight": 30,
+        "metrics": [
+          {
+            "id": "parent_feedback",
+            "name": "Liên lạc & Đồng thuận từ Phụ huynh",
+            "description": "Điểm phản hồi hài lòng từ phụ huynh qua nhóm lớp, họp cha mẹ học sinh",
+            "target": 90,
+            "weight": 40,
+            "actual": 80
+          },
+          {
+            "id": "extracurricular",
+            "name": "Sinh hoạt Sao & Ngoại khóa",
+            "description": "Tổ chức hoạt động trải nghiệm, sinh hoạt tập thể, nề nếp Sao Nhi đồng",
+            "target": 80,
+            "weight": 30,
+            "actual": 80
+          },
+          {
+            "id": "student_progress",
+            "name": "Rèn nếp bán trú & tự phục vụ",
+            "description": "Mức độ tự lập của học sinh trong ăn uống, ngủ trưa và giữ vệ sinh",
+            "target": 85,
+            "weight": 30,
+            "actual": 80
+          }
+        ]
+      }
+    ],
+    "evaluations": []
+  }
+]
