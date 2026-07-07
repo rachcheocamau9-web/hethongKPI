@@ -12,7 +12,9 @@ import {
   Check, 
   AlertCircle, 
   Sparkles,
-  Info
+  Info,
+  Eye,
+  EyeOff
 } from "lucide-react";
 
 interface AddTeacherModalProps {
@@ -57,6 +59,7 @@ export default function AddTeacherModal({
   const [teachingRole, setTeachingRole] = useState<"Giáo viên chủ nhiệm" | "Giáo viên bộ môn">("Giáo viên chủ nhiệm");
   const [assignedClass, setAssignedClass] = useState("");
   const [password, setPassword] = useState("123456");
+  const [showPassword, setShowPassword] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   // Bulk Teachers states
@@ -422,14 +425,23 @@ Phạm Minh C\tminhc@school.edu.vn\tTổ Bộ môn\tTiếng Anh`;
               {/* Password */}
               <div className="space-y-1">
                 <label className="text-[10px] font-bold uppercase tracking-wider text-slate-500 block">Mật khẩu Đăng nhập (Cho Tổ trưởng / Tổ phó):</label>
-                <input
-                  type="text"
-                  required
-                  placeholder="Nhập mật khẩu (Mặc định: 123456)"
-                  className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-xs focus:outline-none focus:border-slate-400 focus:bg-white transition-all font-medium font-mono"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                />
+                <div className="relative">
+                  <input
+                    type={showPassword ? "text" : "password"}
+                    required
+                    placeholder="Nhập mật khẩu (Mặc định: 123456)"
+                    className="w-full bg-slate-50 border border-slate-200 rounded-lg pl-3 pr-10 py-2 text-xs focus:outline-none focus:border-slate-400 focus:bg-white transition-all font-medium font-mono"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                  />
+                  <button
+                    type="button"
+                    onClick={() => setShowPassword(!showPassword)}
+                    className="absolute inset-y-0 right-0 pr-3 flex items-center text-slate-400 hover:text-slate-600 focus:outline-none cursor-pointer"
+                  >
+                    {showPassword ? <EyeOff size={14} /> : <Eye size={14} />}
+                  </button>
+                </div>
               </div>
 
               {/* Profile Picture (Optional) */}

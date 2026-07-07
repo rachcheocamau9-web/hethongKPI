@@ -22,7 +22,9 @@ import {
   RefreshCw,
   Trash2,
   Plus,
-  Clock
+  Clock,
+  Eye,
+  EyeOff
 } from "lucide-react";
 
 interface TeacherProfileDetailProps {
@@ -67,6 +69,7 @@ export default function TeacherProfileDetail({
   const [transferTeachingRole, setTransferTeachingRole] = useState<"Giáo viên chủ nhiệm" | "Giáo viên bộ môn">(teacher.teachingRole || "Giáo viên chủ nhiệm");
   const [transferAssignedClass, setTransferAssignedClass] = useState(teacher.assignedClass || "");
   const [transferPassword, setTransferPassword] = useState(teacher.password || "123456");
+  const [showTransferPassword, setShowTransferPassword] = useState(false);
   const [isTransferring, setIsTransferring] = useState(false);
   const [transferSuccess, setTransferSuccess] = useState(false);
 
@@ -838,13 +841,22 @@ export default function TeacherProfileDetail({
 
                 <div className="space-y-1 pt-1">
                   <label className="text-[10px] font-bold uppercase tracking-wider text-slate-500 block">Mật khẩu Đăng nhập (Cho Tổ trưởng / Tổ phó):</label>
-                  <input
-                    type="text"
-                    className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-xs focus:outline-none focus:border-slate-400 focus:bg-white transition-all font-medium font-mono"
-                    placeholder="Nhập mật khẩu (Mặc định: 123456)"
-                    value={transferPassword}
-                    onChange={(e) => setTransferPassword(e.target.value)}
-                  />
+                  <div className="relative">
+                    <input
+                      type={showTransferPassword ? "text" : "password"}
+                      className="w-full bg-slate-50 border border-slate-200 rounded-lg pl-3 pr-10 py-2 text-xs focus:outline-none focus:border-slate-400 focus:bg-white transition-all font-medium font-mono"
+                      placeholder="Nhập mật khẩu (Mặc định: 123456)"
+                      value={transferPassword}
+                      onChange={(e) => setTransferPassword(e.target.value)}
+                    />
+                    <button
+                      type="button"
+                      onClick={() => setShowTransferPassword(!showTransferPassword)}
+                      className="absolute inset-y-0 right-0 pr-3 flex items-center text-slate-400 hover:text-slate-600 focus:outline-none cursor-pointer"
+                    >
+                      {showTransferPassword ? <EyeOff size={14} /> : <Eye size={14} />}
+                    </button>
+                  </div>
                 </div>
 
                 <button
