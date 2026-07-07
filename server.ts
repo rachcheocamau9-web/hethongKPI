@@ -811,6 +811,11 @@ function getAdminPassword(): string {
       if (config && config.password) {
         return config.password;
       }
+    } else {
+      // Auto-initialize admin.json with default password if it doesn't exist
+      const defaultPassword = process.env.ADMIN_PASSWORD || "1231987Dat";
+      saveAdminPassword(defaultPassword);
+      return defaultPassword;
     }
   } catch (err) {
     console.error("Error reading admin config:", err);
@@ -1865,7 +1870,8 @@ Yêu cầu đầu ra bằng Tiếng Việt chuẩn mực sư phạm và gửi l�
 // Serve Vite in development, static in production
 async function startServer() {
   if (process.env.NODE_ENV !== "production") {
-    const { createServer: createViteServer } = await import("vite");
+    const viteModule = "vite";
+    const { createServer: createViteServer } = await import(/* @vite-ignore */ viteModule);
     const vite = await createViteServer({
       server: { middlewareMode: true },
       appType: "spa",

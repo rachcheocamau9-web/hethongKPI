@@ -1,18 +1,18 @@
 {
   "version": 2,
   "functions": {
-    "api/**/*.ts": {
+    "api/index.ts": {
       "includeFiles": "data/**"
     }
   },
   "rewrites": [
     {
       "source": "/api/(.*)",
-      "destination": "/api/index?path=$1"
+      "destination": "/api/index.ts"
     },
     {
       "source": "/uploads/(.*)",
-      "destination": "/api/index?path=uploads/$1"
+      "destination": "/api/index.ts"
     },
     {
       "source": "/(.*)",

@@ -538,10 +538,25 @@ export default function App() {
         setAdminPasswordInput("");
         loadData();
       } else {
-        const data = await res.json();
-        setAdminLoginError(data.error || "Mật khẩu không chính xác!");
+        let errorMessage = "Mật khẩu không chính xác!";
+        try {
+          const contentType = res.headers.get("content-type");
+          if (contentType && contentType.includes("application/json")) {
+            const data = await res.json();
+            errorMessage = data.error || errorMessage;
+          } else {
+            const text = await res.text();
+            console.error("Non-JSON admin login error:", text);
+            errorMessage = `Lỗi hệ thống (${res.status})`;
+          }
+        } catch (parseErr) {
+          console.error("Error parsing login error response:", parseErr);
+          errorMessage = `Lỗi hệ thống (${res.status})`;
+        }
+        setAdminLoginError(errorMessage);
       }
     } catch (err) {
+      console.error("Network error during admin login:", err);
       setAdminLoginError("Lỗi kết nối máy chủ");
     }
   };
@@ -588,10 +603,26 @@ export default function App() {
         setActiveTab("teachers");
         return true;
       } else {
-        const data = await res.json();
+        try {
+          const contentType = res.headers.get("content-type");
+          if (contentType && contentType.includes("application/json")) {
+            const data = await res.json();
+            if (data.error) {
+              alert(data.error);
+            }
+          } else {
+            const text = await res.text();
+            console.error("Non-JSON leader login error:", text);
+            alert(`Lỗi hệ thống (${res.status})`);
+          }
+        } catch (e) {
+          console.error("Error parsing leader login response:", e);
+          alert(`Lỗi hệ thống (${res.status})`);
+        }
         return false;
       }
     } catch (err: any) {
+      console.error("Network error during leader login:", err);
       alert("Lỗi kết nối máy chủ");
       return false;
     }
