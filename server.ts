@@ -28,6 +28,29 @@ const PORT = 3000;
 app.use(express.json({ limit: "50mb" }));
 app.use(express.urlencoded({ limit: "50mb", extended: true }));
 
+// Vercel Path Rewriting Middleware
+app.use((req, res, next) => {
+  const p = req.query.path;
+  if (p && typeof p === "string") {
+    delete req.query.path;
+    const queryKeys = Object.keys(req.query);
+    let queryString = "";
+    if (queryKeys.length > 0) {
+      queryString = "?" + queryKeys.map(k => `${encodeURIComponent(k)}=${encodeURIComponent(String(req.query[k]))}`).join("&");
+    }
+    let basePath = p;
+    if (!basePath.startsWith("/")) {
+      basePath = "/" + basePath;
+    }
+    if (!basePath.startsWith("/api") && !basePath.startsWith("/uploads")) {
+      basePath = "/api" + basePath;
+    }
+    req.url = basePath + queryString;
+    console.log(`[Vercel Rewriter] Rewrote path to: ${req.url}`);
+  }
+  next();
+});
+
 // Path to data store
 let DATA_DIR = path.join(process.cwd(), "data");
 let UPLOADS_DIR = path.join(process.cwd(), "uploads");
