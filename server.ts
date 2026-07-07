@@ -30,8 +30,52 @@ app.use(express.json({ limit: "50mb" }));
 app.use(express.urlencoded({ limit: "50mb", extended: true }));
 
 // Path to data store
-const DATA_DIR = path.join(process.cwd(), "data");
-const UPLOADS_DIR = path.join(process.cwd(), "uploads");
+let DATA_DIR = path.join(process.cwd(), "data");
+let UPLOADS_DIR = path.join(process.cwd(), "uploads");
+
+// Detect if we are on Vercel or a read-only environment
+let isReadOnly = false;
+try {
+  // Try writing to data directory to see if writable
+  const testFile = path.join(DATA_DIR, ".write_test");
+  fs.writeFileSync(testFile, "test");
+  fs.unlinkSync(testFile);
+} catch (e) {
+  isReadOnly = true;
+}
+
+if (isReadOnly || process.env.VERCEL) {
+  const TMP_DATA_DIR = path.join("/tmp", "data");
+  const TMP_UPLOADS_DIR = path.join("/tmp", "uploads");
+
+  if (!fs.existsSync(TMP_DATA_DIR)) {
+    fs.mkdirSync(TMP_DATA_DIR, { recursive: true });
+  }
+  if (!fs.existsSync(TMP_UPLOADS_DIR)) {
+    fs.mkdirSync(TMP_UPLOADS_DIR, { recursive: true });
+  }
+
+  // Copy original data files to /tmp/data if they don't exist there yet
+  const originalDataDir = path.join(process.cwd(), "data");
+  if (fs.existsSync(originalDataDir)) {
+    const files = fs.readdirSync(originalDataDir);
+    for (const file of files) {
+      const src = path.join(originalDataDir, file);
+      const dest = path.join(TMP_DATA_DIR, file);
+      if (!fs.existsSync(dest) && fs.statSync(src).isFile()) {
+        try {
+          fs.copyFileSync(src, dest);
+        } catch (copyErr) {
+          console.error(`Failed to copy ${file} to /tmp/data:`, copyErr);
+        }
+      }
+    }
+  }
+
+  DATA_DIR = TMP_DATA_DIR;
+  UPLOADS_DIR = TMP_UPLOADS_DIR;
+}
+
 const DATA_FILE = path.join(DATA_DIR, "teachers.json");
 const WEIGHTS_FILE = path.join(DATA_DIR, "weights.json");
 const SCHEMA_FILE = path.join(DATA_DIR, "metrics_schema.json");
@@ -1818,3 +1862,5 @@ async function startServer() {
 }
 
 startServer();
+
+export default app;
