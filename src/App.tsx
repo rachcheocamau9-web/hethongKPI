@@ -423,9 +423,9 @@ export default function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  // Admin Authentication State
-  const [isAdmin, setIsAdmin] = useState<boolean>(false);
-  const [adminToken, setAdminToken] = useState<string | null>(null);
+  // Admin Authentication State (Always enabled by default to remove admin restrictions)
+  const [isAdmin, setIsAdmin] = useState<boolean>(true);
+  const [adminToken, setAdminToken] = useState<string | null>("bypass_token");
   const [isAdminLoginModalOpen, setIsAdminLoginModalOpen] = useState(false);
   const [adminPasswordInput, setAdminPasswordInput] = useState("");
   const [adminLoginError, setAdminLoginError] = useState("");
@@ -1102,31 +1102,7 @@ export default function App() {
               )}
 
               {/* Authentication Status */}
-              {isAdmin ? (
-                <div className="flex items-center gap-1 bg-blue-950/55 px-2.5 py-1 rounded-lg border border-blue-800">
-                  <div className="flex items-center gap-1 text-emerald-400 font-extrabold text-[10px]">
-                    <ShieldCheck size={14} className="animate-pulse text-emerald-400" />
-                    <span>BGH (Admin)</span>
-                  </div>
-                  <button
-                    onClick={() => {
-                      setChangePasswordUserType("admin");
-                      setIsChangePasswordModalOpen(true);
-                    }}
-                    className="p-1 text-blue-300 hover:text-white rounded transition-colors cursor-pointer"
-                    title="Đổi mật khẩu Ban Giám Hiệu"
-                  >
-                    <Key size={13} />
-                  </button>
-                  <button
-                    onClick={handleAdminLogout}
-                    className="p-1 text-rose-400 hover:text-rose-200 rounded transition-colors cursor-pointer"
-                    title="Đăng xuất quyền quản trị"
-                  >
-                    <LogOut size={13} />
-                  </button>
-                </div>
-              ) : isLeader && leaderInfo ? (
+              {isLeader && leaderInfo ? (
                 <div className="flex items-center gap-1 bg-blue-950/55 px-2.5 py-1 rounded-lg border border-blue-800">
                   <div className="flex items-center gap-1 text-sky-300 font-extrabold text-[10px] max-w-[120px]">
                     <ShieldCheck size={14} className="animate-pulse text-sky-400" />
@@ -1154,23 +1130,12 @@ export default function App() {
                 <div className="flex gap-1.5 shrink-0">
                   <button
                     onClick={() => {
-                      setAdminLoginError("");
-                      setAdminPasswordInput("");
-                      setIsAdminLoginModalOpen(true);
-                    }}
-                    className="inline-flex items-center gap-1.5 bg-blue-950 hover:bg-blue-900 text-white text-[10px] font-black uppercase tracking-wider px-2.5 py-1.5 rounded-lg cursor-pointer transition-colors border border-blue-800"
-                  >
-                    <Lock size={11} />
-                    <span>Admin</span>
-                  </button>
-                  <button
-                    onClick={() => {
                       setIsLeaderLoginModalOpen(true);
                     }}
                     className="inline-flex items-center gap-1.5 bg-sky-500 hover:bg-sky-400 text-white text-[10px] font-black uppercase tracking-wider px-2.5 py-1.5 rounded-lg cursor-pointer transition-colors"
                   >
                     <LogIn size={11} />
-                    <span>Tổ Trưởng</span>
+                    <span>Đăng nhập Tổ Trưởng</span>
                   </button>
                 </div>
               )}
@@ -1304,36 +1269,7 @@ export default function App() {
 
             {/* Auth panel */}
             <div className="pt-3 border-t border-blue-900/60">
-              {isAdmin ? (
-                <div className="bg-blue-950/40 p-3 rounded-lg border border-blue-900/80 space-y-3">
-                  <div className="flex items-center justify-between flex-wrap gap-2">
-                    <div className="flex items-center gap-1.5 text-emerald-400">
-                      <ShieldCheck size={15} className="animate-pulse" />
-                      <span className="text-xs font-black uppercase tracking-wide">BGH (Quản trị viên)</span>
-                    </div>
-                    <div className="flex gap-2">
-                      <button
-                        onClick={() => {
-                          setChangePasswordUserType("admin");
-                          setIsChangePasswordModalOpen(true);
-                          setIsMobileMenuOpen(false);
-                        }}
-                        className="bg-blue-800 hover:bg-blue-750 border border-blue-700 text-blue-100 text-[11px] font-semibold py-1.5 px-2.5 rounded transition-all cursor-pointer flex items-center gap-1"
-                      >
-                        <Key size={12} />
-                        Đổi mật khẩu
-                      </button>
-                      <button
-                        onClick={() => { handleAdminLogout(); setIsMobileMenuOpen(false); }}
-                        className="bg-rose-950/40 hover:bg-rose-900 border border-rose-800/60 text-rose-300 text-[11px] font-semibold py-1.5 px-2.5 rounded transition-all cursor-pointer flex items-center gap-1"
-                      >
-                        <LogOut size={12} />
-                        Thoát
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              ) : isLeader && leaderInfo ? (
+              {isLeader && leaderInfo ? (
                 <div className="bg-blue-950/40 p-3 rounded-lg border border-blue-900/80 space-y-3">
                   <div className="flex items-center justify-between flex-wrap gap-2">
                     <div className="flex items-center gap-1.5 text-sky-300">
@@ -1363,19 +1299,7 @@ export default function App() {
                   </div>
                 </div>
               ) : (
-                <div className="grid grid-cols-2 gap-2">
-                  <button
-                    onClick={() => {
-                      setAdminLoginError("");
-                      setAdminPasswordInput("");
-                      setIsAdminLoginModalOpen(true);
-                      setIsMobileMenuOpen(false);
-                    }}
-                    className="w-full flex items-center justify-center gap-1.5 bg-blue-950 hover:bg-blue-900 text-white text-xs font-bold uppercase tracking-wider py-2.5 rounded-lg border border-blue-900"
-                  >
-                    <Lock size={12} />
-                    <span>Đăng nhập BGH</span>
-                  </button>
+                <div className="flex gap-1.5">
                   <button
                     onClick={() => {
                       setIsLeaderLoginModalOpen(true);
@@ -1384,7 +1308,7 @@ export default function App() {
                     className="w-full flex items-center justify-center gap-1.5 bg-sky-500 hover:bg-sky-450 text-white text-xs font-bold uppercase tracking-wider py-2.5 rounded-lg"
                   >
                     <LogIn size={12} />
-                    <span>Đăng nhập Tổ</span>
+                    <span>Đăng nhập Tổ Trưởng</span>
                   </button>
                 </div>
               )}

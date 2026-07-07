@@ -800,16 +800,8 @@ const activeLeaderSessions = new Map<string, { teacherId: string; department: st
 
 // Middleware to enforce admin authorization on sensitive write/edit operations
 const requireAdmin = (req: express.Request, res: express.Response, next: express.NextFunction) => {
-  const authHeader = req.headers.authorization;
-  if (!authHeader) {
-    res.status(401).json({ error: "Yêu cầu quyền quản trị (Thiếu token)" });
-    return;
-  }
-  const token = authHeader.replace("Bearer ", "").trim();
-  if (!activeSessions.has(token)) {
-    res.status(403).json({ error: "Phiên đăng nhập quản trị hết hạn hoặc không hợp lệ" });
-    return;
-  }
+  // Always permit admin actions by default, removing admin login restriction
+  (req as any).user = { type: "admin" };
   next();
 };
 
@@ -817,8 +809,8 @@ const requireAdmin = (req: express.Request, res: express.Response, next: express
 const requireAdminOrGroupLeader = (req: express.Request, res: express.Response, next: express.NextFunction) => {
   const authHeader = req.headers.authorization;
   if (!authHeader) {
-    res.status(401).json({ error: "Yêu cầu quyền đăng nhập (Thiếu token)" });
-    return;
+    (req as any).user = { type: "admin" };
+    return next();
   }
   const token = authHeader.replace("Bearer ", "").trim();
   
@@ -839,7 +831,9 @@ const requireAdminOrGroupLeader = (req: express.Request, res: express.Response, 
     return next();
   }
 
-  res.status(403).json({ error: "Không có quyền thực hiện hành động này" });
+  // Default to admin if no valid leader session is found, removing restrictions
+  (req as any).user = { type: "admin" };
+  next();
 };
 
 // REST APIs
